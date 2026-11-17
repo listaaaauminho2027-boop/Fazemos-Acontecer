@@ -1,4 +1,4 @@
-import { User, Award } from 'lucide-react';
+import { User } from 'lucide-react';
 
 export interface TeamCardProps {
   name?: string;
@@ -52,14 +52,6 @@ export default function TeamCard({
               </span>
             </>
           )}
-
-          {/* Distintivo visual para Presidente / Vice-Presidente */}
-          {isLeader && (
-            <div className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#168BFF] text-white text-[11px] font-extrabold uppercase tracking-wider shadow-xs">
-              <Award className="w-3.5 h-3.5" />
-              <span>Responsável</span>
-            </div>
-          )}
         </div>
 
         {/* Informação do Membro */}
@@ -81,8 +73,8 @@ export default function TeamCard({
       </div>
 
       {/* Departamento no rodapé do cartão */}
-      <div className="px-5 sm:px-6 pb-5 pt-2 border-t border-gray-100">
-        <p className="text-xs font-bold text-gray-500 truncate">
+      <div className="px-5 sm:px-6 pb-5 pt-2.5 border-t border-gray-100">
+        <p className="text-xs font-bold text-[#0759B5]">
           {department}
         </p>
       </div>
