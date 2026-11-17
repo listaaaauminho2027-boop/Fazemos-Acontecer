@@ -157,6 +157,3 @@ export default function EquipaPage() {
     </div>
   );
 }
-    </div>
-  );
-}
