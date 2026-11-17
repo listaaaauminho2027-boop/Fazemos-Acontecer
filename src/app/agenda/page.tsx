@@ -8,7 +8,7 @@ const AGENDA_EVENTS: TimelineEventProps[] = [
     time: '[Hora a confirmar]',
     title: '[PLACEHOLDER: Título da Iniciativa — 2 de dezembro]',
     description:
-      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 2 de dezembro de 2026 de aproximarfuturos.pt.]',
+      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 2 de dezembro de 2026.]',
     location: '[Local / Campus a confirmar]',
   },
   {
@@ -17,7 +17,7 @@ const AGENDA_EVENTS: TimelineEventProps[] = [
     time: '[Hora a confirmar]',
     title: '[PLACEHOLDER: Título da Iniciativa — 3 de dezembro]',
     description:
-      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 3 de dezembro de 2026 de aproximarfuturos.pt.]',
+      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 3 de dezembro de 2026.]',
     location: '[Local / Campus a confirmar]',
   },
   {
@@ -26,7 +26,7 @@ const AGENDA_EVENTS: TimelineEventProps[] = [
     time: '[Hora a confirmar]',
     title: '[PLACEHOLDER: Título da Iniciativa — 4 de dezembro]',
     description:
-      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 4 de dezembro de 2026 de aproximarfuturos.pt.]',
+      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 4 de dezembro de 2026.]',
     location: '[Local / Campus a confirmar]',
   },
   {
@@ -44,7 +44,7 @@ const AGENDA_EVENTS: TimelineEventProps[] = [
     time: '00:00 — 23:59',
     title: 'Dia das Eleições — AAUMinho',
     description:
-      'Ato eleitoral para os órgãos da Associação Académica da Universidade do Minho. Participa e vota Lista A — Aproximar Futuros.',
+      'Ato eleitoral para os órgãos da Associação Académica da Universidade do Minho. Participa e vota Lista A — Fazemos Acontecer.',
     location: 'Universidade do Minho',
     isHighlight: true,
   },
@@ -53,7 +53,6 @@ const AGENDA_EVENTS: TimelineEventProps[] = [
 export default function AgendaPage() {
   return (
     <div className="min-h-screen bg-[#F1F3F6]">
-      {/* 1. CABEÇALHO DA PÁGINA */}
       <section className="relative bg-[#20232B] text-white py-16 lg:py-24 overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#168BFF]/20 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-[#0759B5]/30 blur-2xl pointer-events-none" />
@@ -69,12 +68,11 @@ export default function AgendaPage() {
           </h1>
 
           <p className="text-gray-300 mt-5 max-w-2xl text-lg sm:text-xl leading-relaxed font-medium">
-            Acompanha todas as iniciativas, momentos de debate e ações de campanha da Lista A — Aproximar Futuros até ao dia das eleições.
+            Acompanha todas as iniciativas, momentos de debate e ações de campanha da Lista A — Fazemos Acontecer até ao dia das eleições.
           </p>
         </div>
       </section>
 
-      {/* 2. BANNER VISUAL DE DESTAQUE PARA AS ELEIÇÕES (9 DE DEZEMBRO DE 2026) */}
       <section className="bg-[#0759B5] text-white py-12 sm:py-14 relative overflow-hidden">
         <div className="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-[#168BFF]/30 blur-2xl pointer-events-none" />
 
@@ -110,7 +108,6 @@ export default function AgendaPage() {
         </div>
       </section>
 
-      {/* 3. CRONOLOGIA DE EVENTOS */}
       <section className="py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
