@@ -84,7 +84,6 @@ export default function SuggestionForm() {
         throw new Error('Falha ao enviar a sugestão.');
       }
 
-      // Limpa os campos e mostra confirmação real
       setDepartment('');
       setSuggestion('');
       setErrors({});
@@ -101,7 +100,6 @@ export default function SuggestionForm() {
 
   return (
     <div className="bg-white rounded-3xl border border-gray-200/80 shadow-sm p-6 sm:p-10">
-      {/* Mensagem de confirmação após envio bem-sucedido */}
       {isSubmitted && (
         <div
           role="status"
@@ -117,7 +115,6 @@ export default function SuggestionForm() {
         </div>
       )}
 
-      {/* Mensagem de erro caso falhe o envio */}
       {errors.submit && (
         <div
           role="alert"
@@ -132,7 +129,6 @@ export default function SuggestionForm() {
       )}
 
       <form onSubmit={handleSubmit} noValidate className="space-y-6">
-        {/* Campo 1: Departamento */}
         <div>
           <label
             htmlFor="department"
@@ -183,7 +179,6 @@ export default function SuggestionForm() {
           )}
         </div>
 
-        {/* Campo 2: Sugestão */}
         <div>
           <label
             htmlFor="suggestion"
@@ -198,4 +193,57 @@ export default function SuggestionForm() {
           <textarea
             id="suggestion"
             name="suggestion"
-            rows={
+            rows={6}
+            value={suggestion}
+            onChange={(e) => {
+              setSuggestion(e.target.value);
+              if (errors.suggestion) {
+                setErrors((prev) => ({ ...prev, suggestion: undefined }));
+              }
+              if (isSubmitted) setIsSubmitted(false);
+            }}
+            placeholder="Partilha aqui a tua ideia, proposta ou preocupação para a Universidade do Minho..."
+            aria-invalid={Boolean(errors.suggestion)}
+            aria-describedby={errors.suggestion ? 'suggestion-error' : undefined}
+            className={`w-full rounded-xl border px-4 py-3.5 text-sm sm:text-base font-medium bg-[#F1F3F6]/60 text-[#20232B] placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-2 transition-all resize-y ${
+              errors.suggestion
+                ? 'border-red-500 focus:ring-red-200'
+                : 'border-gray-300 focus:border-[#168BFF] focus:ring-[#168BFF]/20'
+            }`}
+          />
+
+          {errors.suggestion && (
+            <p
+              id="suggestion-error"
+              role="alert"
+              className="mt-2 flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600"
+            >
+              <AlertCircle className="w-4 h-4 shrink-0" />
+              <span>{errors.suggestion}</span>
+            </p>
+          )}
+        </div>
+
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#168BFF] hover:bg-[#0759B5] disabled:opacity-60 text-white font-extrabold px-8 py-4 rounded-xl transition-all shadow-md hover:shadow-lg text-base cursor-pointer"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                <span>A enviar...</span>
+              </>
+            ) : (
+              <>
+                <Send className="w-5 h-5" />
+                <span>Enviar Sugestão</span>
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
