@@ -68,7 +68,6 @@ const TEAM_MEMBERS: TeamMember[] = [
 export default function EquipaPage() {
   return (
     <div className="min-h-screen bg-[#F1F3F6]">
-      {/* CABEÇALHO DA PÁGINA */}
       <section className="relative bg-[#20232B] text-white py-16 lg:py-24 overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#168BFF]/20 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-[#0759B5]/30 blur-2xl pointer-events-none" />
@@ -84,12 +83,11 @@ export default function EquipaPage() {
           </h1>
 
           <p className="text-gray-300 mt-5 max-w-2xl text-lg sm:text-xl leading-relaxed font-medium">
-            Conhece os 35 dirigentes da candidatura Lista A — Aproximar Futuros. Uma equipa dedicada, próxima e preparada para representar todos os estudantes da Universidade do Minho.
+            Conhece os 35 dirigentes da candidatura Lista A — Fazemos Acontecer. Uma equipa dedicada, próxima e preparada para representar todos os estudantes da Universidade do Minho.
           </p>
         </div>
       </section>
 
-      {/* GRELHA ÚNICA COM OS 35 MEMBROS */}
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
