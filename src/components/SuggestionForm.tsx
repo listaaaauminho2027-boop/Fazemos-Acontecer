@@ -109,7 +109,7 @@ export default function SuggestionForm() {
           <div className="text-xs sm:text-sm leading-relaxed">
             <p className="font-extrabold">Sugestão enviada com sucesso!</p>
             <p className="mt-0.5 text-emerald-800">
-              Obrigado pelo teu contributo para a Lista A — Aproximar Futuros. A tua mensagem foi encaminhada para a nossa equipa.
+              Obrigado pelo teu contributo para a Lista A — Fazemos Acontecer. A tua mensagem foi encaminhada para a nossa equipa.
             </p>
           </div>
         </div>
