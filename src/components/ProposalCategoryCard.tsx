@@ -1,39 +1,69 @@
-import { Layers, ArrowRight } from 'lucide-react';
+import { LucideIcon, CheckCircle2 } from 'lucide-react';
 
-interface ProposalCategoryCardProps {
-  number: number;
-  title?: string;
-  summary?: string;
+export interface ProposalItem {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface ProposalCategoryCardProps {
+  id: string;
+  index: number;
+  title: string;
+  icon: LucideIcon;
+  proposals: ProposalItem[];
 }
 
 export default function ProposalCategoryCard({
-  number,
-  title = `[Categoria de Propostas #${number}]`,
-  summary = '[PLACEHOLDER: Resumo e medidas principais desta área programática do manifesto.]',
+  id,
+  index,
+  title,
+  icon: Icon,
+  proposals,
 }: ProposalCategoryCardProps) {
   return (
-    <div className="bg-white rounded-2xl p-7 border border-[#F1F3F6] shadow-xs hover:border-[#168BFF] hover:shadow-md transition-all flex flex-col justify-between">
-      <div>
-        <div className="flex items-center justify-between mb-5">
-          <div className="w-12 h-12 rounded-xl bg-[#E8F3FF] text-[#168BFF] flex items-center justify-center font-extrabold text-lg">
-            0{number}
+    <section
+      id={id}
+      className="scroll-mt-28 bg-white rounded-3xl border border-gray-200/80 shadow-xs overflow-hidden"
+    >
+      {/* Cabeçalho da Categoria */}
+      <div className="bg-gradient-to-r from-[#20232B] to-[#0759B5] p-6 sm:p-8 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#168BFF] text-white flex items-center justify-center shrink-0 shadow-md">
+            <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
           </div>
-          <Layers className="w-5 h-5 text-gray-400" />
+          <div>
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#E8F3FF]/80 block mb-1">
+              Eixo 0{index}
+            </span>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight">
+              {title}
+            </h2>
+          </div>
         </div>
-
-        <h3 className="text-xl font-extrabold text-[#20232B] mb-3">
-          {title}
-        </h3>
-
-        <p className="text-sm text-gray-600 leading-relaxed">
-          {summary}
-        </p>
       </div>
 
-      <div className="mt-6 pt-4 border-t border-[#F1F3F6] flex items-center justify-between text-xs font-bold text-[#168BFF]">
-        <span>[PLACEHOLDER: Espaço para medidas detalhadas]</span>
-        <ArrowRight className="w-4 h-4" />
+      {/* Lista de Propostas da Categoria */}
+      <div className="p-6 sm:p-8 divide-y divide-gray-100">
+        {proposals.map((proposal) => (
+          <div
+            key={proposal.id}
+            className="py-5 first:pt-0 last:pb-0 flex items-start gap-4"
+          >
+            <div className="mt-1 w-6 h-6 rounded-full bg-[#E8F3FF] text-[#168BFF] flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-4 h-4" />
+            </div>
+            <div className="space-y-1.5">
+              <h3 className="text-base sm:text-lg font-extrabold text-[#20232B]">
+                {proposal.title}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed whitespace-pre-line">
+                {proposal.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
