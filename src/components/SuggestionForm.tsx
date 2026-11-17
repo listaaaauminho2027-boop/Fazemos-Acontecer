@@ -5,9 +5,9 @@ import {
   Send,
   AlertCircle,
   CheckCircle2,
-  Info,
   Building,
   MessageSquareText,
+  Loader2,
 } from 'lucide-react';
 
 const DEPARTMENTS_OPTIONS = [
@@ -26,6 +26,7 @@ const DEPARTMENTS_OPTIONS = [
 interface FormErrors {
   department?: string;
   suggestion?: string;
+  submit?: string;
 }
 
 export default function SuggestionForm() {
@@ -53,6 +54,7 @@ export default function SuggestionForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitted(false);
+    setErrors({});
 
     if (!validate()) {
       return;
@@ -60,32 +62,46 @@ export default function SuggestionForm() {
 
     setIsSubmitting(true);
 
-    // Estrutura preparada para futura integração com serviço de backend / API / base de dados:
-    // const payload = { department, suggestion: suggestion.trim(), createdAt: new Date().toISOString() };
-    // await fetch('/api/sugestoes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    try {
+      const response = await fetch(
+        'https://formsubmit.co/ajax/listaa.aauminho2027@gmail.com',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            _subject: `Nova Sugestão (${department}) — Lista A`,
+            Departamento: department,
+            Sugestao: suggestion.trim(),
+            _template: 'table',
+          }),
+        }
+      );
 
-    // Limpa os campos e apresenta feedback transparente
-    setDepartment('');
-    setSuggestion('');
-    setErrors({});
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (!response.ok) {
+        throw new Error('Falha ao enviar a sugestão.');
+      }
+
+      // Limpa os campos e mostra confirmação real
+      setDepartment('');
+      setSuggestion('');
+      setErrors({});
+      setIsSubmitted(true);
+    } catch {
+      setErrors({
+        submit:
+          'Não foi possível enviar a tua sugestão neste momento. Por favor, verifica a tua ligação e tenta novamente.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="bg-white rounded-3xl border border-gray-200/80 shadow-sm p-6 sm:p-10">
-      {/* Aviso claro sobre o estado da integração de backend */}
-      <div className="mb-8 flex items-start gap-3.5 rounded-2xl bg-[#E8F3FF] border border-[#168BFF]/25 p-4 sm:p-5 text-[#0759B5]">
-        <Info className="w-5 h-5 text-[#168BFF] shrink-0 mt-0.5" />
-        <div className="text-xs sm:text-sm leading-relaxed">
-          <p className="font-extrabold">Modo de Demonstração Ativo</p>
-          <p className="mt-0.5 text-[#0759B5]/90">
-            Este formulário encontra-se preparado para futura ligação a um serviço de backend ou base de dados. Enquanto a integração não está ativa, as submissões servem apenas para validação visual e não são armazenadas externamente.
-          </p>
-        </div>
-      </div>
-
-      {/* Mensagem de confirmação após submissão válida */}
+      {/* Mensagem de confirmação após envio bem-sucedido */}
       {isSubmitted && (
         <div
           role="status"
@@ -93,10 +109,24 @@ export default function SuggestionForm() {
         >
           <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
           <div className="text-xs sm:text-sm leading-relaxed">
-            <p className="font-extrabold">Formulário validado com sucesso!</p>
+            <p className="font-extrabold">Sugestão enviada com sucesso!</p>
             <p className="mt-0.5 text-emerald-800">
-              Os campos foram verificados e limpos. Nota: como o formulário está em modo de demonstração sem backend configurado, esta mensagem não foi enviada nem guardada numa base de dados.
+              Obrigado pelo teu contributo para a Lista A — Aproximar Futuros. A tua mensagem foi encaminhada para a nossa equipa.
             </p>
+          </div>
+        </div>
+      )}
+
+      {/* Mensagem de erro caso falhe o envio */}
+      {errors.submit && (
+        <div
+          role="alert"
+          className="mb-8 flex items-start gap-3.5 rounded-2xl bg-red-50 border border-red-200 p-4 sm:p-5 text-red-900"
+        >
+          <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+          <div className="text-xs sm:text-sm leading-relaxed">
+            <p className="font-extrabold">Erro no envio</p>
+            <p className="mt-0.5 text-red-800">{errors.submit}</p>
           </div>
         </div>
       )}
@@ -168,49 +198,4 @@ export default function SuggestionForm() {
           <textarea
             id="suggestion"
             name="suggestion"
-            rows={6}
-            value={suggestion}
-            onChange={(e) => {
-              setSuggestion(e.target.value);
-              if (errors.suggestion) {
-                setErrors((prev) => ({ ...prev, suggestion: undefined }));
-              }
-              if (isSubmitted) setIsSubmitted(false);
-            }}
-            placeholder="Partilha aqui a tua ideia, proposta ou preocupação para a Universidade do Minho..."
-            aria-invalid={Boolean(errors.suggestion)}
-            aria-describedby={errors.suggestion ? 'suggestion-error' : undefined}
-            className={`w-full rounded-xl border px-4 py-3.5 text-sm sm:text-base font-medium bg-[#F1F3F6]/60 text-[#20232B] placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-2 transition-all resize-y ${
-              errors.suggestion
-                ? 'border-red-500 focus:ring-red-200'
-                : 'border-gray-300 focus:border-[#168BFF] focus:ring-[#168BFF]/20'
-            }`}
-          />
-
-          {errors.suggestion && (
-            <p
-              id="suggestion-error"
-              role="alert"
-              className="mt-2 flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600"
-            >
-              <AlertCircle className="w-4 h-4 shrink-0" />
-              <span>{errors.suggestion}</span>
-            </p>
-          )}
-        </div>
-
-        {/* Botão de Envio */}
-        <div className="pt-2">
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#168BFF] hover:bg-[#0759B5] disabled:opacity-60 text-white font-extrabold px-8 py-4 rounded-xl transition-all shadow-md hover:shadow-lg text-base cursor-pointer"
-          >
-            <Send className="w-5 h-5" />
-            <span>Enviar Sugestão</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-}
+            rows={
