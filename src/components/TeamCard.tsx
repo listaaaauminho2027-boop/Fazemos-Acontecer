@@ -12,24 +12,13 @@ export default function TeamCard({
   name = 'Nome a adicionar',
   role,
   department,
-  isLeader = false,
   imageUrl,
 }: TeamCardProps) {
   return (
-    <article
-      className={`group rounded-2xl overflow-hidden transition-all flex flex-col justify-between ${
-        isLeader
-          ? 'bg-gradient-to-b from-[#E8F3FF] to-white border-2 border-[#168BFF] shadow-md hover:shadow-lg'
-          : 'bg-white border border-gray-200/80 shadow-xs hover:border-[#168BFF] hover:shadow-md'
-      }`}
-    >
+    <article className="group rounded-2xl overflow-hidden transition-all flex flex-col justify-between bg-white border border-gray-200/80 shadow-xs hover:border-[#168BFF] hover:shadow-md">
       <div>
         {/* Área de Fotografia / Imagem de Perfil */}
-        <div
-          className={`aspect-[4/4] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center ${
-            isLeader ? 'bg-[#168BFF]/10' : 'bg-[#F1F3F6]'
-          }`}
-        >
+        <div className="aspect-[4/4] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center bg-[#F1F3F6]">
           {imageUrl ? (
             <img
               src={imageUrl}
@@ -38,13 +27,7 @@ export default function TeamCard({
             />
           ) : (
             <>
-              <div
-                className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-3 shadow-xs transition-transform group-hover:scale-105 ${
-                  isLeader
-                    ? 'bg-[#168BFF] text-white'
-                    : 'bg-white text-[#168BFF]'
-                }`}
-              >
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-3 shadow-xs transition-transform group-hover:scale-105 bg-white text-[#168BFF]">
                 <User className="w-10 h-10" />
               </div>
               <span className="text-[11px] font-extrabold uppercase tracking-wider text-gray-500">
@@ -56,13 +39,7 @@ export default function TeamCard({
 
         {/* Informação do Membro */}
         <div className="p-5 sm:p-6 space-y-2">
-          <span
-            className={`inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md ${
-              isLeader
-                ? 'bg-[#168BFF] text-white'
-                : 'bg-[#E8F3FF] text-[#0759B5]'
-            }`}
-          >
+          <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#E8F3FF] text-[#0759B5]">
             {role}
           </span>
 
