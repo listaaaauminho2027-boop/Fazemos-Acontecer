@@ -12,10 +12,34 @@ interface TimeLeft {
   seconds: number;
 }
 
-// 9 de dezembro de 2026 às 00:00:00 no fuso horário Europe/Lisbon (WET = UTC+0 em dezembro)
-const ELECTION_START_MS = Date.parse('2026-12-09T00:00:00Z');
-// Fim do dia 9 de dezembro de 2026 (início de 10 de dezembro às 00:00:00 Europe/Lisbon)
-const ELECTION_END_MS = Date.parse('2026-12-10T00:00:00Z');
+const ELECTION_START_MS = Date.UTC(2026, 11, 9, 0, 0, 0);
+const ELECTION_END_MS = Date.UTC(2026, 11, 10, 0, 0, 0);
+
+function getNowInLisbonMs(): number {
+  const formatter = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Lisbon',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  });
+
+  const parts = formatter.formatToParts(new Date());
+  const getPart = (type: string) =>
+    Number(parts.find((p) => p.type === type)?.value ?? 0);
+
+  return Date.UTC(
+    getPart('year'),
+    getPart('month') - 1,
+    getPart('day'),
+    getPart('hour'),
+    getPart('minute'),
+    getPart('second')
+  );
+}
 
 export default function Countdown() {
   const [phase, setPhase] = useState<ElectionPhase>('loading');
@@ -28,11 +52,7 @@ export default function Countdown() {
 
   useEffect(() => {
     const updateCountdown = () => {
-      // Obtém a data/hora atual sincronizada com o fuso horário Europe/Lisbon
-      const nowLisbonString = new Date().toLocaleString('en-US', {
-        timeZone: 'Europe/Lisbon',
-      });
-      const nowLisbonMs = new Date(nowLisbonString).getTime();
+      const nowLisbonMs = getNowInLisbonMs();
 
       if (nowLisbonMs < ELECTION_START_MS) {
         const diff = ELECTION_START_MS - nowLisbonMs;
@@ -58,12 +78,13 @@ export default function Countdown() {
   const formatNumber = (num: number) => String(num).padStart(2, '0');
 
   return (
-    <section className="bg-[#0759B5] text-white py-14 sm:py-16 relative overflow-hidden">
-      {/* Detalhe decorativo sutil */}
+    <section
+      aria-label="Contagem decrescente para as eleições"
+      className="bg-[#0759B5] text-white py-14 sm:py-16 relative overflow-hidden"
+    >
       <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-[#168BFF]/30 blur-2xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* ESTADO 1: ANTES DAS ELEIÇÕES (CONTADOR DINÂMICO) */}
         {(phase === 'before' || phase === 'loading') && (
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             <div className="space-y-2.5 text-center lg:text-left">
@@ -75,7 +96,7 @@ export default function Countdown() {
                 Rumo às Eleições da AAUMinho
               </h2>
               <p className="text-sm sm:text-base text-[#E8F3FF]/90 font-medium">
-                9 de dezembro de 2026 • O teu voto aproxima futuros.
+                9 de dezembro de 2026 • Juntos fazemos acontecer.
               </p>
             </div>
 
@@ -102,7 +123,6 @@ export default function Countdown() {
           </div>
         )}
 
-        {/* ESTADO 2: NO DIA DAS ELEIÇÕES (9 DE DEZEMBRO DE 2026) */}
         {phase === 'today' && (
           <div className="text-center py-4 space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#168BFF] text-white font-extrabold text-xs uppercase tracking-widest shadow-sm">
@@ -113,17 +133,16 @@ export default function Countdown() {
               É HOJE!
             </h2>
             <p className="text-lg sm:text-xl text-[#E8F3FF] font-semibold max-w-2xl mx-auto">
-              Chegou o dia de decidir o futuro da nossa Academia. Participa e vota Lista A — Aproximar Futuros!
+              Chegou o dia de decidir o futuro da nossa Academia. Participa e vota Lista A — Fazemos Acontecer!
             </p>
           </div>
         )}
 
-        {/* ESTADO 3: APÓS AS ELEIÇÕES */}
         {phase === 'after' && (
           <div className="text-center py-4 space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-[#E8F3FF] font-extrabold text-xs uppercase tracking-wider">
               <HeartHandshake className="w-4 h-4 text-[#168BFF]" />
-              <span>Lista A — Aproximar Futuros</span>
+              <span>Lista A — Fazemos Acontecer</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
               Obrigado a todos os estudantes!
