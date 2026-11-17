@@ -8,26 +8,25 @@ import ScrollToTop from '@/components/ScrollToTop';
 const manrope = Manrope({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-manrope',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Lista A — Aproximar Futuros | AAUMinho',
-  description: 'Candidatura Lista A à Associação Académica da Universidade do Minho — Aproximar Futuros.',
+  title: 'Lista A — Fazemos Acontecer | AAUMinho',
+  description:
+    'Website oficial da candidatura Lista A — Fazemos Acontecer à Associação Académica da Universidade do Minho.',
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="pt" className={manrope.variable}>
-      <body className={`${manrope.className} antialiased flex flex-col min-h-screen bg-white text-[#20232B]`}>
+    <html lang="pt" className={manrope.className}>
+      <body className="min-h-screen flex flex-col bg-white text-[#20232B] antialiased">
         <Header />
-        <main className="flex-grow pt-20">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
         <ScrollToTop />
       </body>
