@@ -12,10 +12,7 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
-  // Placeholders claramente identificados para comunicação (substituir quando existirem conteúdos oficiais)
   const comunicados = [1, 2, 3];
-
-  // Grelha preparada para integração futura de publicações reais do Instagram
   const instagramSlots = [1, 2, 3, 4];
 
   return (
@@ -30,7 +27,6 @@ export default function HomePage() {
       <section className="py-20 lg:py-24 bg-white border-b border-[#F1F3F6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#F1F3F6] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
-            {/* Elemento gráfico de destaque */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-[#168BFF]/10 rounded-bl-full pointer-events-none" />
 
             <div className="max-w-3xl space-y-6 relative z-10">
@@ -41,12 +37,12 @@ export default function HomePage() {
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#20232B] tracking-tight leading-tight">
                 Sobre a Lista A —{' '}
-                <span className="text-[#168BFF]">Aproximar Futuros</span>
+                <span className="text-[#168BFF]">Fazemos Acontecer</span>
               </h2>
 
               <div className="space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed font-medium">
                 <p>
-                  [PLACEHOLDER: Texto editável de apresentação da Lista A e da sua visão para a Associação Académica da Universidade do Minho. Substituir pelo texto original de aproximarfuturos.pt.]
+                  [PLACEHOLDER: Texto editável de apresentação da Lista A e da sua visão para a Associação Académica da Universidade do Minho. Substituir pelo texto oficial.]
                 </p>
                 <p>
                   [PLACEHOLDER: Segundo parágrafo opcional sobre a proximidade aos estudantes dos campi de Braga e Guimarães.]
@@ -124,7 +120,6 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Grelha visual preparada para publicações reais */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {instagramSlots.map((slot) => (
                 <div
