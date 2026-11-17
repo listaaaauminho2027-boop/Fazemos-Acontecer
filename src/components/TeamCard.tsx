@@ -15,10 +15,10 @@ export default function TeamCard({
   imageUrl,
 }: TeamCardProps) {
   return (
-    <article className="group rounded-2xl overflow-hidden transition-all flex flex-col justify-between bg-white border border-gray-200/80 shadow-xs hover:border-[#168BFF] hover:shadow-md">
+    <article className="card-immersive group rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between hover:-translate-y-1">
       <div>
         {/* Área de Fotografia / Imagem de Perfil */}
-        <div className="aspect-[4/4] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center bg-[#F1F3F6]">
+        <div className="aspect-[4/4] relative overflow-hidden flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-[#0B2868]/70 to-[#06112E]">
           {imageUrl ? (
             <img
               src={imageUrl}
@@ -27,10 +27,10 @@ export default function TeamCard({
             />
           ) : (
             <>
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-3 shadow-xs transition-transform group-hover:scale-105 bg-white text-[#168BFF]">
-                <User className="w-10 h-10" />
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-3 shadow-md transition-transform group-hover:scale-105 bg-[#155CEB]/25 border border-[#2478FF]/40 text-white">
+                <User className="w-10 h-10 text-[#EAF2FF]" />
               </div>
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-gray-500">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#EAF2FF]/65">
                 Fotografia a adicionar
               </span>
             </>
@@ -38,20 +38,20 @@ export default function TeamCard({
         </div>
 
         {/* Informação do Membro */}
-        <div className="p-5 sm:p-6 space-y-2">
-          <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#E8F3FF] text-[#0759B5]">
+        <div className="p-5 sm:p-6 space-y-2.5">
+          <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md bg-[#155CEB]/25 text-[#EAF2FF] border border-[#2478FF]/35">
             {role}
           </span>
 
-          <h3 className="text-lg sm:text-xl font-extrabold text-[#20232B] leading-snug pt-0.5">
+          <h3 className="text-lg sm:text-xl font-extrabold text-white leading-snug pt-0.5">
             {name}
           </h3>
         </div>
       </div>
 
       {/* Departamento no rodapé do cartão */}
-      <div className="px-5 sm:px-6 pb-5 pt-2.5 border-t border-gray-100">
-        <p className="text-xs font-bold text-[#0759B5]">
+      <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#EAF2FF]/12 bg-[#06112E]/40">
+        <p className="text-xs font-extrabold text-[#2478FF] tracking-wide">
           {department}
         </p>
       </div>
