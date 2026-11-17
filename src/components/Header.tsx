@@ -19,30 +19,33 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#F1F3F6] shadow-2xs">
+    <header className="sticky top-0 z-50 bg-[#06112E]/90 backdrop-blur-md border-b border-[#EAF2FF]/12 shadow-lg shadow-black/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logótipo / Identidade */}
+          {/* Logótipo / Identidade (Preservado) */}
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-3 group"
           >
-            <div className="w-11 h-11 rounded-xl bg-[#168BFF] group-hover:bg-[#0759B5] text-white flex items-center justify-center font-extrabold text-xl transition-colors shadow-xs">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#2478FF] to-[#155CEB] group-hover:from-white group-hover:to-[#EAF2FF] text-white group-hover:text-[#06112E] flex items-center justify-center font-extrabold text-xl transition-all shadow-md shadow-[#155CEB]/30">
               A
             </div>
             <div className="leading-tight">
-              <span className="block font-extrabold text-base sm:text-lg text-[#20232B] tracking-tight">
+              <span className="block font-extrabold text-base sm:text-lg text-white tracking-tight">
                 Lista A
               </span>
-              <span className="block text-xs font-bold text-[#168BFF]">
+              <span className="block text-xs font-bold text-[#EAF2FF]/80">
                 Fazemos Acontecer
               </span>
             </div>
           </Link>
 
           {/* Navegação Desktop */}
-          <nav aria-label="Navegação Principal" className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav
+            aria-label="Navegação Principal"
+            className="hidden md:flex items-center gap-1 lg:gap-2"
+          >
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -51,8 +54,8 @@ export default function Header() {
                   href={link.href}
                   className={`px-4 py-2 rounded-xl text-sm font-extrabold transition-all ${
                     isActive
-                      ? 'bg-[#168BFF] text-white shadow-xs'
-                      : 'text-[#20232B] hover:bg-[#E8F3FF] hover:text-[#0759B5]'
+                      ? 'bg-white text-[#06112E] shadow-md'
+                      : 'text-[#EAF2FF] hover:bg-[#0B2868]/80 hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -67,7 +70,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-            className="md:hidden p-2.5 rounded-xl text-[#20232B] hover:bg-[#F1F3F6] transition-colors"
+            className="md:hidden p-2.5 rounded-xl text-[#EAF2FF] hover:bg-[#0B2868] hover:text-white transition-colors"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -76,7 +79,7 @@ export default function Header() {
 
       {/* Menu Mobile Expandido */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-[#F1F3F6] px-4 pt-3 pb-6 space-y-1.5 shadow-lg">
+        <div className="md:hidden bg-[#081B46]/98 backdrop-blur-xl border-t border-[#EAF2FF]/15 px-4 pt-3 pb-6 space-y-1.5 shadow-2xl">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -86,8 +89,8 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl text-base font-extrabold transition-colors ${
                   isActive
-                    ? 'bg-[#168BFF] text-white'
-                    : 'text-[#20232B] hover:bg-[#E8F3FF] hover:text-[#0759B5]'
+                    ? 'bg-white text-[#06112E]'
+                    : 'text-[#EAF2FF] hover:bg-[#0B2868] hover:text-white'
                 }`}
               >
                 {link.label}
