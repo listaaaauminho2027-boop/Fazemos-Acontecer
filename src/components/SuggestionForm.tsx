@@ -99,16 +99,16 @@ export default function SuggestionForm() {
   };
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-200/80 shadow-sm p-6 sm:p-10">
+    <div className="card-immersive rounded-3xl p-6 sm:p-10">
       {isSubmitted && (
         <div
           role="status"
-          className="mb-8 flex items-start gap-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 p-4 sm:p-5 text-emerald-900"
+          className="mb-8 flex items-start gap-3.5 rounded-2xl bg-emerald-950/70 border border-emerald-400/40 p-4 sm:p-5 text-emerald-100"
         >
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+          <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           <div className="text-xs sm:text-sm leading-relaxed">
-            <p className="font-extrabold">Sugestão enviada com sucesso!</p>
-            <p className="mt-0.5 text-emerald-800">
+            <p className="font-extrabold text-white">Sugestão enviada com sucesso!</p>
+            <p className="mt-0.5 text-emerald-200/90">
               Obrigado pelo teu contributo para a Lista A — Fazemos Acontecer. A tua mensagem foi encaminhada para a nossa equipa.
             </p>
           </div>
@@ -118,12 +118,12 @@ export default function SuggestionForm() {
       {errors.submit && (
         <div
           role="alert"
-          className="mb-8 flex items-start gap-3.5 rounded-2xl bg-red-50 border border-red-200 p-4 sm:p-5 text-red-900"
+          className="mb-8 flex items-start gap-3.5 rounded-2xl bg-red-950/70 border border-red-400/40 p-4 sm:p-5 text-red-100"
         >
-          <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+          <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
           <div className="text-xs sm:text-sm leading-relaxed">
-            <p className="font-extrabold">Erro no envio</p>
-            <p className="mt-0.5 text-red-800">{errors.submit}</p>
+            <p className="font-extrabold text-white">Erro no envio</p>
+            <p className="mt-0.5 text-red-200/90">{errors.submit}</p>
           </div>
         </div>
       )}
@@ -132,11 +132,11 @@ export default function SuggestionForm() {
         <div>
           <label
             htmlFor="department"
-            className="flex items-center gap-2 text-sm font-extrabold text-[#20232B] mb-2"
+            className="flex items-center gap-2 text-sm font-extrabold text-white mb-2"
           >
-            <Building className="w-4 h-4 text-[#168BFF]" />
+            <Building className="w-4 h-4 text-[#2478FF]" />
             <span>
-              Departamento <span className="text-red-500">*</span>
+              Departamento <span className="text-[#2478FF]">*</span>
             </span>
           </label>
 
@@ -153,15 +153,17 @@ export default function SuggestionForm() {
             }}
             aria-invalid={Boolean(errors.department)}
             aria-describedby={errors.department ? 'department-error' : undefined}
-            className={`w-full rounded-xl border px-4 py-3.5 text-sm sm:text-base font-medium bg-[#F1F3F6]/60 text-[#20232B] focus:bg-white focus:outline-none focus:ring-2 transition-all ${
+            className={`w-full rounded-xl border px-4 py-3.5 text-sm sm:text-base font-medium bg-[#06112E]/85 text-white focus:bg-[#06112E] focus:outline-none focus:ring-2 transition-all ${
               errors.department
-                ? 'border-red-500 focus:ring-red-200'
-                : 'border-gray-300 focus:border-[#168BFF] focus:ring-[#168BFF]/20'
+                ? 'border-red-400 focus:ring-red-400/30'
+                : 'border-[#EAF2FF]/25 focus:border-white focus:ring-[#2478FF]/40'
             }`}
           >
-            <option value="">Seleciona o departamento ou área...</option>
+            <option value="" className="bg-[#06112E] text-[#EAF2FF]">
+              Seleciona o departamento ou área...
+            </option>
             {DEPARTMENTS_OPTIONS.map((dept) => (
-              <option key={dept} value={dept}>
+              <option key={dept} value={dept} className="bg-[#06112E] text-white">
                 {dept}
               </option>
             ))}
@@ -171,7 +173,7 @@ export default function SuggestionForm() {
             <p
               id="department-error"
               role="alert"
-              className="mt-2 flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600"
+              className="mt-2 flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-300"
             >
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errors.department}</span>
@@ -182,11 +184,11 @@ export default function SuggestionForm() {
         <div>
           <label
             htmlFor="suggestion"
-            className="flex items-center gap-2 text-sm font-extrabold text-[#20232B] mb-2"
+            className="flex items-center gap-2 text-sm font-extrabold text-white mb-2"
           >
-            <MessageSquareText className="w-4 h-4 text-[#168BFF]" />
+            <MessageSquareText className="w-4 h-4 text-[#2478FF]" />
             <span>
-              Sugestão <span className="text-red-500">*</span>
+              Sugestão <span className="text-[#2478FF]">*</span>
             </span>
           </label>
 
@@ -205,10 +207,10 @@ export default function SuggestionForm() {
             placeholder="Partilha aqui a tua ideia, proposta ou preocupação para a Universidade do Minho..."
             aria-invalid={Boolean(errors.suggestion)}
             aria-describedby={errors.suggestion ? 'suggestion-error' : undefined}
-            className={`w-full rounded-xl border px-4 py-3.5 text-sm sm:text-base font-medium bg-[#F1F3F6]/60 text-[#20232B] placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-2 transition-all resize-y ${
+            className={`w-full rounded-xl border px-4 py-3.5 text-sm sm:text-base font-medium bg-[#06112E]/85 text-white placeholder:text-[#EAF2FF]/45 focus:bg-[#06112E] focus:outline-none focus:ring-2 transition-all resize-y ${
               errors.suggestion
-                ? 'border-red-500 focus:ring-red-200'
-                : 'border-gray-300 focus:border-[#168BFF] focus:ring-[#168BFF]/20'
+                ? 'border-red-400 focus:ring-red-400/30'
+                : 'border-[#EAF2FF]/25 focus:border-white focus:ring-[#2478FF]/40'
             }`}
           />
 
@@ -216,7 +218,7 @@ export default function SuggestionForm() {
             <p
               id="suggestion-error"
               role="alert"
-              className="mt-2 flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-600"
+              className="mt-2 flex items-center gap-1.5 text-xs sm:text-sm font-bold text-red-300"
             >
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{errors.suggestion}</span>
@@ -228,16 +230,16 @@ export default function SuggestionForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#168BFF] hover:bg-[#0759B5] disabled:opacity-60 text-white font-extrabold px-8 py-4 rounded-xl transition-all shadow-md hover:shadow-lg text-base cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white hover:bg-[#EAF2FF] disabled:opacity-60 text-[#06112E] font-extrabold px-8 py-4 rounded-xl transition-all shadow-lg hover:-translate-y-0.5 text-base cursor-pointer"
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="w-5 h-5 animate-spin" />
+                <Loader2 className="w-5 h-5 animate-spin text-[#155CEB]" />
                 <span>A enviar...</span>
               </>
             ) : (
               <>
-                <Send className="w-5 h-5" />
+                <Send className="w-5 h-5 text-[#155CEB]" />
                 <span>Enviar Sugestão</span>
               </>
             )}
