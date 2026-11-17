@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt" className={manrope.className}>
-      <body className="min-h-screen flex flex-col bg-white text-[#20232B] antialiased">
+      <body className="min-h-screen flex flex-col bg-[#06112E] text-white antialiased selection:bg-[#2478FF] selection:text-white">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
