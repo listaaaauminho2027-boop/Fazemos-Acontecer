@@ -11,27 +11,38 @@
   --branco-azulado: #F5F8FF;
 }
 
-/* Keyframes para movimento orgânico dos gradientes e luzes */
+/* Movimento contínuo e bem visível dos gradientes de fundo */
 @keyframes auroraFlow {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 20%;
+  }
+  25% {
+    background-position: 80% 10%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 85%;
+  }
+  75% {
+    background-position: 20% 90%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 20%;
   }
 }
 
-@keyframes pulseGlow {
+/* Ondulação automática das luzes e arcos de fundo */
+@keyframes floatOrb {
   0%, 100% {
-    opacity: 0.45;
-    transform: scale(1) translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0) scale(1);
+    opacity: 0.55;
   }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.08) translate(12px, -10px);
+  33% {
+    transform: translate3d(45px, -30px, 0) scale(1.18);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate3d(-35px, 25px, 0) scale(0.92);
+    opacity: 0.65;
   }
 }
 
@@ -56,27 +67,42 @@ body {
   overflow-x: hidden;
 }
 
-/* Fundo dinâmico com gradiente animado e profundidade */
+/* Fundo dinâmico animado */
 .bg-mesh-dark {
   background-color: #06112E;
   background-image:
-    radial-gradient(circle at 82% 18%, rgba(36, 120, 255, 0.28) 0%, transparent 48%),
-    radial-gradient(circle at 14% 78%, rgba(21, 92, 235, 0.24) 0%, transparent 52%),
-    linear-gradient(135deg, #06112E 0%, #081B46 35%, #0B2868 70%, #06112E 100%);
-  background-size: 220% 220%;
-  animation: auroraFlow 18s ease-in-out infinite;
+    radial-gradient(circle at 20% 25%, rgba(36, 120, 255, 0.38) 0%, transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(21, 92, 235, 0.35) 0%, transparent 50%),
+    linear-gradient(125deg, #06112E 0%, #0B2868 35%, #155CEB 65%, #06112E 100%);
+  background-size: 260% 260%;
+  animation: auroraFlow 11s ease-in-out infinite;
 }
 
-/* Animação automática para as secções principais com gradiente */
-section[class*="bg-gradient-to-"] {
-  background-size: 200% 200%;
-  animation: auroraFlow 16s ease-in-out infinite;
+/* Animação automática contínua (sem hover) em todas as secções e blocos com gradiente */
+section[class*="bg-gradient-to-"],
+div[class*="bg-gradient-to-br"][class*="rounded-3xl"] {
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(36, 120, 255, 0.42) 0%, transparent 48%),
+    radial-gradient(circle at 85% 78%, rgba(21, 92, 235, 0.38) 0%, transparent 52%),
+    linear-gradient(125deg, #06112E 0%, #081B46 28%, #0B2868 58%, #155CEB 82%, #06112E 100%) !important;
+  background-size: 260% 260% !important;
+  animation: auroraFlow 10s ease-in-out infinite !important;
 }
 
-/* Faz as esferas luminosas de fundo respirarem suavemente */
+/* Secções sólidas da página inicial também ganham gradiente vivo automático */
+main > div > section {
+  background-image:
+    radial-gradient(circle at 15% 30%, rgba(36, 120, 255, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(21, 92, 235, 0.22) 0%, transparent 48%),
+    linear-gradient(135deg, #06112E 0%, #081B46 40%, #0B2868 75%, #06112E 100%);
+  background-size: 250% 250%;
+  animation: auroraFlow 12s ease-in-out infinite;
+}
+
+/* Esferas e curvas luminosas a flutuar automaticamente */
 .blur-3xl,
 .blur-2xl {
-  animation: pulseGlow 10s ease-in-out infinite;
+  animation: floatOrb 8s ease-in-out infinite !important;
   will-change: transform, opacity;
 }
 
@@ -86,7 +112,7 @@ section[class*="bg-gradient-to-"] {
   overflow: hidden;
   background: linear-gradient(
     155deg,
-    rgba(11, 40, 104, 0.68) 0%,
+    rgba(11, 40, 104, 0.72) 0%,
     rgba(8, 27, 70, 0.92) 55%,
     rgba(6, 17, 46, 0.98) 100%
   );
@@ -127,10 +153,11 @@ section[class*="bg-gradient-to-"] {
   animation: subtleSweep 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Respeito pelas preferências de movimento reduzido do utilizador */
 @media (prefers-reduced-motion: reduce) {
   .bg-mesh-dark,
   section[class*="bg-gradient-to-"],
+  div[class*="bg-gradient-to-br"][class*="rounded-3xl"],
+  main > div > section,
   .blur-3xl,
   .blur-2xl,
   .card-immersive::before {
