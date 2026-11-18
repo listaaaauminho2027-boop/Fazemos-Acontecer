@@ -4,43 +4,35 @@ import { Users, FileText, ArrowRight, Image as ImageIcon } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-[#06112E] via-[#081B46] to-[#0B2868] overflow-hidden pt-14 pb-22 lg:pt-24 lg:pb-32 border-b border-[#EAF2FF]/12">
-      {/* Arcos abstratos fluidos */}
+      {/* Arcos abstratos fluidos subtis */}
       <svg
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-45"
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-35"
         viewBox="0 0 1440 800"
         fill="none"
         preserveAspectRatio="xMidYMid slice"
       >
         <defs>
           <linearGradient id="heroArc1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2478FF" stopOpacity="0.45" />
+            <stop offset="0%" stopColor="#2478FF" stopOpacity="0.4" />
             <stop offset="100%" stopColor="#06112E" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient id="heroArc2" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#155CEB" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#081B46" stopOpacity="0" />
           </linearGradient>
         </defs>
         <path
           d="M-120 680 C 260 220, 740 160, 1560 440 L 1560 860 L -120 860 Z"
           fill="url(#heroArc1)"
         />
-        <path
-          d="M420 -80 C 780 260, 1140 320, 1560 120 L 1560 -80 Z"
-          fill="url(#heroArc2)"
-        />
       </svg>
 
-      {/* Logótipo monumental no fundo da secção inteira, por trás da caixa */}
+      {/* Logótipo gigante no fundo, cortado nas margens como na referência gráfica */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden z-0"
+        className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0"
       >
         <img
           src="/images/logo-branco.png"
           alt=""
-          className="w-[620px] h-[620px] sm:w-[780px] sm:h-[780px] lg:w-[940px] lg:h-[940px] object-contain opacity-[0.14] translate-x-12 sm:translate-x-20 lg:translate-x-16 -rotate-6 drop-shadow-[0_0_80px_rgba(36,120,255,0.5)]"
+          className="absolute -right-28 -bottom-36 sm:-right-32 sm:-bottom-48 lg:-right-24 lg:-bottom-64 w-[680px] h-[680px] sm:w-[960px] sm:h-[960px] lg:w-[1280px] lg:h-[1280px] max-w-none object-contain opacity-[0.18] drop-shadow-[0_0_90px_rgba(36,120,255,0.55)]"
         />
       </div>
 
@@ -86,8 +78,8 @@ export default function Hero() {
 
           {/* Coluna Direita: Moldura da Fotografia de Candidatura */}
           <div className="lg:col-span-6">
-            <div className="relative w-full rounded-3xl bg-gradient-to-br from-[#2478FF]/25 to-[#081B46]/70 p-3 sm:p-4 border border-[#EAF2FF]/25 shadow-2xl shadow-black/60 backdrop-blur-md">
-              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868]/80 via-[#155CEB]/70 to-[#06112E]/85 flex flex-col items-center justify-center p-8 text-center text-white relative overflow-hidden">
+            <div className="relative w-full rounded-3xl bg-gradient-to-br from-[#2478FF]/25 to-[#081B46]/65 p-3 sm:p-4 border border-[#EAF2FF]/25 shadow-2xl shadow-black/60 backdrop-blur-md">
+              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868]/75 via-[#155CEB]/65 to-[#06112E]/80 flex flex-col items-center justify-center p-8 text-center text-white relative overflow-hidden">
                 <div className="w-16 h-16 rounded-2xl bg-white/12 backdrop-blur-xs flex items-center justify-center mb-4 border border-[#EAF2FF]/25 relative z-10">
                   <ImageIcon className="w-8 h-8 text-white" />
                 </div>
