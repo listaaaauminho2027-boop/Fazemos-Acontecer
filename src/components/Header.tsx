@@ -22,14 +22,18 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-[#06112E]/90 backdrop-blur-md border-b border-[#EAF2FF]/12 shadow-lg shadow-black/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logótipo / Identidade (Preservado) */}
+          {/* Logótipo Oficial Lista A */}
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center gap-3 group"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#2478FF] to-[#155CEB] group-hover:from-white group-hover:to-[#EAF2FF] text-white group-hover:text-[#06112E] flex items-center justify-center font-extrabold text-xl transition-all shadow-md shadow-[#155CEB]/30">
-              A
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#2478FF] to-[#155CEB] flex items-center justify-center p-1.5 shadow-md shadow-[#155CEB]/30 overflow-hidden transition-transform group-hover:scale-105">
+              <img
+                src="/images/logo-branco.png"
+                alt="Logótipo Lista A"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="leading-tight">
               <span className="block font-extrabold text-base sm:text-lg text-white tracking-tight">
