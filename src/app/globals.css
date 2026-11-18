@@ -11,38 +11,40 @@
   --branco-azulado: #F5F8FF;
 }
 
-/* Movimento contínuo e bem visível dos gradientes de fundo */
-@keyframes auroraFlow {
+/* Movimento real e fluido das ondas de luz de fundo */
+@keyframes waveDriftA {
   0% {
-    background-position: 0% 20%;
-  }
-  25% {
-    background-position: 80% 10%;
+    transform: translate(-15%, -10%) rotate(0deg) scale(1);
   }
   50% {
-    background-position: 100% 85%;
-  }
-  75% {
-    background-position: 20% 90%;
+    transform: translate(20%, 15%) rotate(180deg) scale(1.25);
   }
   100% {
-    background-position: 0% 20%;
+    transform: translate(-15%, -10%) rotate(360deg) scale(1);
   }
 }
 
-/* Ondulação automática das luzes e arcos de fundo */
-@keyframes floatOrb {
-  0%, 100% {
-    transform: translate3d(0px, 0px, 0) scale(1);
-    opacity: 0.55;
+@keyframes waveDriftB {
+  0% {
+    transform: translate(18%, 12%) rotate(360deg) scale(1.15);
   }
-  33% {
-    transform: translate3d(45px, -30px, 0) scale(1.18);
-    opacity: 0.9;
+  50% {
+    transform: translate(-22%, -15%) rotate(180deg) scale(0.95);
   }
-  66% {
-    transform: translate3d(-35px, 25px, 0) scale(0.92);
-    opacity: 0.65;
+  100% {
+    transform: translate(18%, 12%) rotate(0deg) scale(1.15);
+  }
+}
+
+@keyframes gradientSlide {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -67,43 +69,58 @@ body {
   overflow-x: hidden;
 }
 
-/* Fundo dinâmico animado */
-.bg-mesh-dark {
-  background-color: #06112E;
-  background-image:
-    radial-gradient(circle at 20% 25%, rgba(36, 120, 255, 0.38) 0%, transparent 45%),
-    radial-gradient(circle at 80% 75%, rgba(21, 92, 235, 0.35) 0%, transparent 50%),
-    linear-gradient(125deg, #06112E 0%, #0B2868 35%, #155CEB 65%, #06112E 100%);
-  background-size: 260% 260%;
-  animation: auroraFlow 11s ease-in-out infinite;
-}
-
-/* Animação automática contínua (sem hover) em todas as secções e blocos com gradiente */
-section[class*="bg-gradient-to-"],
-div[class*="bg-gradient-to-br"][class*="rounded-3xl"] {
-  background-image:
-    radial-gradient(circle at 18% 22%, rgba(36, 120, 255, 0.42) 0%, transparent 48%),
-    radial-gradient(circle at 85% 78%, rgba(21, 92, 235, 0.38) 0%, transparent 52%),
-    linear-gradient(125deg, #06112E 0%, #081B46 28%, #0B2868 58%, #155CEB 82%, #06112E 100%) !important;
-  background-size: 260% 260% !important;
-  animation: auroraFlow 10s ease-in-out infinite !important;
-}
-
-/* Secções sólidas da página inicial também ganham gradiente vivo automático */
+/* Gradiente linear animado (desliza continuamente da esquerda para a direita) */
+.bg-mesh-dark,
 main > div > section {
-  background-image:
-    radial-gradient(circle at 15% 30%, rgba(36, 120, 255, 0.25) 0%, transparent 45%),
-    radial-gradient(circle at 85% 70%, rgba(21, 92, 235, 0.22) 0%, transparent 48%),
-    linear-gradient(135deg, #06112E 0%, #081B46 40%, #0B2868 75%, #06112E 100%);
-  background-size: 250% 250%;
-  animation: auroraFlow 12s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    -45deg,
+    #06112E,
+    #081B46,
+    #0B2868,
+    #155CEB,
+    #081B46,
+    #06112E
+  ) !important;
+  background-size: 400% 400% !important;
+  animation: gradientSlide 9s ease infinite !important;
 }
 
-/* Esferas e curvas luminosas a flutuar automaticamente */
+/* Camada física de aurora luminosa que atravessa o fundo das secções */
+main > div > section::before,
+main > div > section::after {
+  content: "";
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  max-width: 720px;
+  max-height: 720px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(85px);
+}
+
+main > div > section::before {
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(36, 120, 255, 0.42) 0%, transparent 70%);
+  animation: waveDriftA 14s ease-in-out infinite;
+}
+
+main > div > section::after {
+  bottom: -20%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(21, 92, 235, 0.38) 0%, transparent 70%);
+  animation: waveDriftB 17s ease-in-out infinite;
+}
+
+/* Esferas decorativas existentes também entram na dança */
 .blur-3xl,
 .blur-2xl {
-  animation: floatOrb 8s ease-in-out infinite !important;
-  will-change: transform, opacity;
+  animation: waveDriftA 12s ease-in-out infinite !important;
+  will-change: transform;
 }
 
 /* Cartões imersivos com reflexo luminoso no hover */
@@ -151,16 +168,4 @@ main > div > section {
 
 .card-immersive:hover::before {
   animation: subtleSweep 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bg-mesh-dark,
-  section[class*="bg-gradient-to-"],
-  div[class*="bg-gradient-to-br"][class*="rounded-3xl"],
-  main > div > section,
-  .blur-3xl,
-  .blur-2xl,
-  .card-immersive::before {
-    animation: none !important;
-  }
 }
