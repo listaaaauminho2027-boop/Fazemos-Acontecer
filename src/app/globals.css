@@ -11,43 +11,6 @@
   --branco-azulado: #F5F8FF;
 }
 
-/* Movimento real e fluido das ondas de luz de fundo */
-@keyframes waveDriftA {
-  0% {
-    transform: translate(-15%, -10%) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translate(20%, 15%) rotate(180deg) scale(1.25);
-  }
-  100% {
-    transform: translate(-15%, -10%) rotate(360deg) scale(1);
-  }
-}
-
-@keyframes waveDriftB {
-  0% {
-    transform: translate(18%, 12%) rotate(360deg) scale(1.15);
-  }
-  50% {
-    transform: translate(-22%, -15%) rotate(180deg) scale(0.95);
-  }
-  100% {
-    transform: translate(18%, 12%) rotate(0deg) scale(1.15);
-  }
-}
-
-@keyframes gradientSlide {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @keyframes subtleSweep {
   0% {
     transform: translateX(-120%) skewX(-18deg);
@@ -69,72 +32,27 @@ body {
   overflow-x: hidden;
 }
 
-/* Gradiente linear animado (desliza continuamente da esquerda para a direita) */
-.bg-mesh-dark,
-main > div > section {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(
-    -45deg,
-    #06112E,
-    #081B46,
-    #0B2868,
-    #155CEB,
-    #081B46,
-    #06112E
-  ) !important;
-  background-size: 400% 400% !important;
-  animation: gradientSlide 9s ease infinite !important;
+/* Textura sutil de profundidade sem movimento */
+.bg-mesh-dark {
+  background-color: #06112E;
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(36, 120, 255, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 10% 80%, rgba(21, 92, 235, 0.18) 0%, transparent 50%),
+    linear-gradient(135deg, #06112E 0%, #081B46 52%, #0B2868 100%);
 }
 
-/* Camada física de aurora luminosa que atravessa o fundo das secções */
-main > div > section::before,
-main > div > section::after {
-  content: "";
-  position: absolute;
-  width: 55vw;
-  height: 55vw;
-  max-width: 720px;
-  max-height: 720px;
-  border-radius: 9999px;
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(85px);
-}
-
-main > div > section::before {
-  top: -15%;
-  left: -10%;
-  background: radial-gradient(circle, rgba(36, 120, 255, 0.42) 0%, transparent 70%);
-  animation: waveDriftA 14s ease-in-out infinite;
-}
-
-main > div > section::after {
-  bottom: -20%;
-  right: -10%;
-  background: radial-gradient(circle, rgba(21, 92, 235, 0.38) 0%, transparent 70%);
-  animation: waveDriftB 17s ease-in-out infinite;
-}
-
-/* Esferas decorativas existentes também entram na dança */
-.blur-3xl,
-.blur-2xl {
-  animation: waveDriftA 12s ease-in-out infinite !important;
-  will-change: transform;
-}
-
-/* Cartões imersivos com reflexo luminoso no hover */
+/* Cartões imersivos com reflexo luminoso discreto no hover */
 .card-immersive {
   position: relative;
   overflow: hidden;
   background: linear-gradient(
     155deg,
-    rgba(11, 40, 104, 0.72) 0%,
-    rgba(8, 27, 70, 0.92) 55%,
+    rgba(11, 40, 104, 0.65) 0%,
+    rgba(8, 27, 70, 0.92) 60%,
     rgba(6, 17, 46, 0.98) 100%
   );
   border: 1px solid rgba(234, 242, 255, 0.14);
-  box-shadow: 0 12px 32px -8px rgba(2, 8, 26, 0.7);
+  box-shadow: 0 12px 32px -8px rgba(2, 8, 26, 0.65);
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.35s ease,
@@ -160,10 +78,8 @@ main > div > section::after {
 }
 
 .card-immersive:hover {
-  border-color: rgba(36, 120, 255, 0.65);
-  box-shadow:
-    0 20px 44px -10px rgba(21, 92, 235, 0.35),
-    0 0 20px rgba(36, 120, 255, 0.15);
+  border-color: rgba(36, 120, 255, 0.55);
+  box-shadow: 0 18px 40px -10px rgba(21, 92, 235, 0.28);
 }
 
 .card-immersive:hover::before {
