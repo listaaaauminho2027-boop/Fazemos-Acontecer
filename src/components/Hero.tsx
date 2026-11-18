@@ -4,7 +4,7 @@ import { Users, FileText, ArrowRight, Image as ImageIcon } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-[#06112E] via-[#081B46] to-[#0B2868] overflow-hidden pt-14 pb-22 lg:pt-24 lg:pb-32 border-b border-[#EAF2FF]/12">
-      {/* Arcos abstratos fluidos e pontos luminosos inspirados na identidade visual */}
+      {/* Arcos abstratos fluidos */}
       <svg
         aria-hidden="true"
         className="absolute inset-0 w-full h-full pointer-events-none opacity-45"
@@ -31,6 +31,18 @@ export default function Hero() {
           fill="url(#heroArc2)"
         />
       </svg>
+
+      {/* Logótipo monumental no fundo da secção inteira, por trás da caixa */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden z-0"
+      >
+        <img
+          src="/images/logo-branco.png"
+          alt=""
+          className="w-[620px] h-[620px] sm:w-[780px] sm:h-[780px] lg:w-[940px] lg:h-[940px] object-contain opacity-[0.14] translate-x-12 sm:translate-x-20 lg:translate-x-16 -rotate-6 drop-shadow-[0_0_80px_rgba(36,120,255,0.5)]"
+        />
+      </div>
 
       <div className="absolute -top-32 right-10 w-[480px] h-[480px] rounded-full bg-[#2478FF]/20 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 -left-24 w-96 h-96 rounded-full bg-[#155CEB]/20 blur-3xl pointer-events-none" />
@@ -72,31 +84,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Coluna Direita: Logótipo no Fundo + Fotografia da Candidatura à Frente */}
-          <div className="lg:col-span-6 relative flex items-center justify-center">
-            {/* Camada de Fundo: Logótipo da Lista A em grande escala por trás da foto */}
-            <div
-              aria-hidden="true"
-              className="absolute -inset-10 sm:-inset-14 flex items-center justify-center pointer-events-none select-none z-0"
-            >
-              <img
-                src="/images/logo-branco.png"
-                alt=""
-                className="w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] lg:w-[520px] lg:h-[520px] object-contain opacity-25 -rotate-6 scale-110 drop-shadow-[0_0_45px_rgba(36,120,255,0.45)]"
-              />
-            </div>
-
-            {/* Camada Principal: Moldura da Fotografia de Candidatura */}
-            <div className="relative z-10 w-full rounded-3xl bg-gradient-to-br from-[#2478FF]/30 to-[#081B46]/75 p-3 sm:p-4 border border-[#EAF2FF]/25 shadow-2xl shadow-black/60 backdrop-blur-md">
-              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868]/85 via-[#155CEB]/75 to-[#06112E]/90 flex flex-col items-center justify-center p-8 text-center text-white relative overflow-hidden">
-                {/* Marca d'água sutil do logótipo também visível através do vidro */}
-                <img
-                  src="/images/logo-branco.png"
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 m-auto w-64 h-64 sm:w-80 sm:h-80 object-contain opacity-15 pointer-events-none select-none"
-                />
-
+          {/* Coluna Direita: Moldura da Fotografia de Candidatura */}
+          <div className="lg:col-span-6">
+            <div className="relative w-full rounded-3xl bg-gradient-to-br from-[#2478FF]/25 to-[#081B46]/70 p-3 sm:p-4 border border-[#EAF2FF]/25 shadow-2xl shadow-black/60 backdrop-blur-md">
+              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868]/80 via-[#155CEB]/70 to-[#06112E]/85 flex flex-col items-center justify-center p-8 text-center text-white relative overflow-hidden">
                 <div className="w-16 h-16 rounded-2xl bg-white/12 backdrop-blur-xs flex items-center justify-center mb-4 border border-[#EAF2FF]/25 relative z-10">
                   <ImageIcon className="w-8 h-8 text-white" />
                 </div>
