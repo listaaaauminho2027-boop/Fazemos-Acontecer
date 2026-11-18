@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Users, FileText, ArrowRight } from 'lucide-react';
+import { Users, FileText, ArrowRight, Image as ImageIcon } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -37,7 +37,7 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Coluna Esquerda: Título e Botões (sem bloco de texto) */}
+          {/* Coluna Esquerda: Título e Botões */}
           <div className="lg:col-span-6 space-y-8">
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#155CEB]/25 text-[#EAF2FF] font-extrabold text-xs uppercase tracking-wider border border-[#2478FF]/40 backdrop-blur-xs">
               <span className="w-2.5 h-2.5 rounded-full bg-[#2478FF] shadow-xs shadow-[#2478FF]" />
@@ -72,20 +72,45 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Coluna Direita: Logótipo Oficial da Lista A */}
-          <div className="lg:col-span-6">
-            <div className="relative rounded-3xl bg-gradient-to-br from-[#2478FF]/30 to-[#081B46]/80 p-3 sm:p-4 border border-[#EAF2FF]/20 shadow-2xl shadow-black/50 backdrop-blur-xs">
-              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868] via-[#155CEB] to-[#06112E] flex items-center justify-center p-10 sm:p-14 relative overflow-hidden">
-                {/* Curva luminosa interna */}
-                <div className="absolute -bottom-16 -right-16 w-72 h-72 rounded-full bg-[#2478FF]/35 blur-2xl pointer-events-none" />
-                <div className="absolute -top-16 -left-16 w-64 h-64 rounded-full bg-[#06112E]/50 blur-2xl pointer-events-none" />
-                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#EAF2FF_1px,transparent_1px)] [background-size:16px_16px]" />
+          {/* Coluna Direita: Logótipo no Fundo + Fotografia da Candidatura à Frente */}
+          <div className="lg:col-span-6 relative flex items-center justify-center">
+            {/* Camada de Fundo: Logótipo da Lista A em grande escala por trás da foto */}
+            <div
+              aria-hidden="true"
+              className="absolute -inset-10 sm:-inset-14 flex items-center justify-center pointer-events-none select-none z-0"
+            >
+              <img
+                src="/images/logo-branco.png"
+                alt=""
+                className="w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] lg:w-[520px] lg:h-[520px] object-contain opacity-25 -rotate-6 scale-110 drop-shadow-[0_0_45px_rgba(36,120,255,0.45)]"
+              />
+            </div>
 
+            {/* Camada Principal: Moldura da Fotografia de Candidatura */}
+            <div className="relative z-10 w-full rounded-3xl bg-gradient-to-br from-[#2478FF]/30 to-[#081B46]/75 p-3 sm:p-4 border border-[#EAF2FF]/25 shadow-2xl shadow-black/60 backdrop-blur-md">
+              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868]/85 via-[#155CEB]/75 to-[#06112E]/90 flex flex-col items-center justify-center p-8 text-center text-white relative overflow-hidden">
+                {/* Marca d'água sutil do logótipo também visível através do vidro */}
                 <img
                   src="/images/logo-branco.png"
-                  alt="Logótipo Oficial Lista A — Fazemos Acontecer"
-                  className="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-contain relative z-10 drop-shadow-[0_12px_28px_rgba(6,17,46,0.65)] transition-transform duration-500 hover:scale-105"
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 m-auto w-64 h-64 sm:w-80 sm:h-80 object-contain opacity-15 pointer-events-none select-none"
                 />
+
+                <div className="w-16 h-16 rounded-2xl bg-white/12 backdrop-blur-xs flex items-center justify-center mb-4 border border-[#EAF2FF]/25 relative z-10">
+                  <ImageIcon className="w-8 h-8 text-white" />
+                </div>
+
+                <span className="px-3.5 py-1 rounded-full bg-white text-[#06112E] text-xs font-extrabold uppercase tracking-wider mb-3 relative z-10 shadow-xs">
+                  Fotografia Principal
+                </span>
+
+                <p className="font-extrabold text-lg sm:text-xl max-w-md text-white relative z-10">
+                  [PLACEHOLDER: Fotografia de Candidatura da Lista A — Fazemos Acontecer]
+                </p>
+                <p className="text-xs sm:text-sm text-[#EAF2FF]/85 mt-2 max-w-sm relative z-10">
+                  Espaço preparado para a imagem oficial da candidatura (proporção recomendada 16:11).
+                </p>
               </div>
             </div>
           </div>
