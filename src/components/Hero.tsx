@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Users, FileText, ArrowRight, Image as ImageIcon } from 'lucide-react';
+import { Users, FileText, ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -37,8 +37,8 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Coluna Esquerda: Título, Apresentação e Botões */}
-          <div className="lg:col-span-6 space-y-7">
+          {/* Coluna Esquerda: Título e Botões (sem bloco de texto) */}
+          <div className="lg:col-span-6 space-y-8">
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#155CEB]/25 text-[#EAF2FF] font-extrabold text-xs uppercase tracking-wider border border-[#2478FF]/40 backdrop-blur-xs">
               <span className="w-2.5 h-2.5 rounded-full bg-[#2478FF] shadow-xs shadow-[#2478FF]" />
               Candidatura AAUMinho
@@ -51,12 +51,8 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-[#EAF2FF]/85 leading-relaxed font-medium max-w-xl">
-              [PLACEHOLDER: Frase de apresentação da candidatura Lista A — Fazemos Acontecer. Substituir pelo texto oficial.]
-            </p>
-
-            {/* Botões de Ação (Principal branco + Secundário contorno azul-gelo) */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            {/* Botões de Ação */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-1">
               <Link
                 href="/equipa"
                 className="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-[#EAF2FF] text-[#06112E] font-extrabold px-7 py-4 rounded-xl transition-all shadow-lg shadow-black/30 hover:-translate-y-0.5 text-base"
@@ -76,28 +72,20 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Coluna Direita: Espaço para Fotografia de Grupo */}
+          {/* Coluna Direita: Logótipo Oficial da Lista A */}
           <div className="lg:col-span-6">
             <div className="relative rounded-3xl bg-gradient-to-br from-[#2478FF]/30 to-[#081B46]/80 p-3 sm:p-4 border border-[#EAF2FF]/20 shadow-2xl shadow-black/50 backdrop-blur-xs">
-              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868] via-[#155CEB] to-[#06112E] flex flex-col items-center justify-center p-8 text-center text-white relative overflow-hidden">
+              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868] via-[#155CEB] to-[#06112E] flex items-center justify-center p-10 sm:p-14 relative overflow-hidden">
                 {/* Curva luminosa interna */}
                 <div className="absolute -bottom-16 -right-16 w-72 h-72 rounded-full bg-[#2478FF]/35 blur-2xl pointer-events-none" />
+                <div className="absolute -top-16 -left-16 w-64 h-64 rounded-full bg-[#06112E]/50 blur-2xl pointer-events-none" />
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#EAF2FF_1px,transparent_1px)] [background-size:16px_16px]" />
 
-                <div className="w-16 h-16 rounded-2xl bg-white/12 backdrop-blur-xs flex items-center justify-center mb-4 border border-[#EAF2FF]/25 relative z-10">
-                  <ImageIcon className="w-8 h-8 text-white" />
-                </div>
-
-                <span className="px-3.5 py-1 rounded-full bg-white text-[#06112E] text-xs font-extrabold uppercase tracking-wider mb-3 relative z-10 shadow-xs">
-                  Fotografia Principal
-                </span>
-
-                <p className="font-extrabold text-lg sm:text-xl max-w-md text-white relative z-10">
-                  [PLACEHOLDER: Fotografia de Grupo da Lista A — Fazemos Acontecer]
-                </p>
-                <p className="text-xs sm:text-sm text-[#EAF2FF]/85 mt-2 max-w-sm relative z-10">
-                  Espaço preparado para a imagem oficial da candidatura (proporção recomendada 16:11).
-                </p>
+                <img
+                  src="/images/logo-branco.png"
+                  alt="Logótipo Oficial Lista A — Fazemos Acontecer"
+                  className="w-44 h-44 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-contain relative z-10 drop-shadow-[0_12px_28px_rgba(6,17,46,0.65)] transition-transform duration-500 hover:scale-105"
+                />
               </div>
             </div>
           </div>
