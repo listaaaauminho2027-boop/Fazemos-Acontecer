@@ -13,7 +13,6 @@ import {
 
 export default function HomePage() {
   const comunicados = [1, 2, 3];
-  const instagramSlots = [1, 2, 3, 4];
 
   return (
     <div className="bg-[#06112E]">
@@ -95,13 +94,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. SECÇÃO INSTAGRAM */}
+      {/* 5. SECÇÃO INSTAGRAM (SEM GRELHA DE PUBLICAÇÕES) */}
       <section className="py-20 lg:py-24 bg-[#06112E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl bg-gradient-to-br from-[#0B2868] via-[#155CEB] to-[#081B46] p-8 sm:p-12 lg:p-14 text-white shadow-2xl shadow-black/45 border border-[#EAF2FF]/20 relative overflow-hidden">
             <div className="absolute -right-24 -top-24 w-80 h-80 rounded-full bg-white/10 blur-3xl pointer-events-none" />
 
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-10 relative z-10">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
               <div className="space-y-3 max-w-2xl">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#06112E]/40 border border-[#EAF2FF]/20 text-[#EAF2FF] font-extrabold text-xs uppercase tracking-wider">
                   <Instagram className="w-4 h-4 text-white" />
@@ -125,25 +124,6 @@ export default function HomePage() {
                 <span>Abrir Perfil Oficial</span>
                 <ArrowUpRight className="w-4 h-4" />
               </a>
-            </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10">
-              {instagramSlots.map((slot) => (
-                <div
-                  key={slot}
-                  className="aspect-square rounded-2xl bg-[#06112E]/45 backdrop-blur-xs border border-[#EAF2FF]/20 p-5 flex flex-col items-center justify-center text-center"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#2478FF]/30 border border-[#EAF2FF]/25 flex items-center justify-center mb-3">
-                    <Instagram className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-white">
-                    Publicação #{slot}
-                  </span>
-                  <span className="text-[11px] text-[#EAF2FF]/80 mt-1">
-                    [PLACEHOLDER: Espaço preparado para integração de conteúdo real]
-                  </span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
