@@ -4,7 +4,6 @@ import { Instagram, ExternalLink } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="relative bg-[#06112E] text-white border-t border-[#EAF2FF]/12 overflow-hidden">
-      {/* Arco luminoso decorativo sutil */}
       <div className="absolute -bottom-36 -left-24 w-96 h-96 rounded-full bg-[#155CEB]/15 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
@@ -12,8 +11,12 @@ export default function Footer() {
           {/* Coluna 1: Identidade */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2478FF] to-[#155CEB] text-white flex items-center justify-center font-extrabold text-lg shadow-md shadow-[#155CEB]/25">
-                A
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2478FF] to-[#155CEB] flex items-center justify-center p-1.5 shadow-md shadow-[#155CEB]/25 overflow-hidden">
+                <img
+                  src="/images/logo-branco.png"
+                  alt="Logótipo Lista A"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="block font-extrabold text-lg leading-none text-white">
