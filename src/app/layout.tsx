@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: 'Lista A — Fazemos Acontecer | AAUMinho',
   description:
     'Website oficial da candidatura Lista A — Fazemos Acontecer à Associação Académica da Universidade do Minho.',
+  icons: {
+    icon: '/images/logo-branco.png',
+  },
 };
 
 export default function RootLayout({
