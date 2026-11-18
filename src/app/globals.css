@@ -11,6 +11,39 @@
   --branco-azulado: #F5F8FF;
 }
 
+/* Keyframes para movimento orgânico dos gradientes e luzes */
+@keyframes auroraFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1) translate(0px, 0px);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08) translate(12px, -10px);
+  }
+}
+
+@keyframes subtleSweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
 html {
   scroll-behavior: smooth;
   background-color: #06112E;
@@ -23,22 +56,84 @@ body {
   overflow-x: hidden;
 }
 
-/* Textura sutil de profundidade sem afetar legibilidade */
+/* Fundo dinâmico com gradiente animado e profundidade */
 .bg-mesh-dark {
   background-color: #06112E;
   background-image:
-    radial-gradient(circle at 85% 15%, rgba(36, 120, 255, 0.22) 0%, transparent 45%),
-    radial-gradient(circle at 10% 80%, rgba(21, 92, 235, 0.18) 0%, transparent 50%),
-    linear-gradient(135deg, #06112E 0%, #081B46 52%, #0B2868 100%);
+    radial-gradient(circle at 82% 18%, rgba(36, 120, 255, 0.28) 0%, transparent 48%),
+    radial-gradient(circle at 14% 78%, rgba(21, 92, 235, 0.24) 0%, transparent 52%),
+    linear-gradient(135deg, #06112E 0%, #081B46 35%, #0B2868 70%, #06112E 100%);
+  background-size: 220% 220%;
+  animation: auroraFlow 18s ease-in-out infinite;
 }
 
+/* Animação automática para as secções principais com gradiente */
+section[class*="bg-gradient-to-"] {
+  background-size: 200% 200%;
+  animation: auroraFlow 16s ease-in-out infinite;
+}
+
+/* Faz as esferas luminosas de fundo respirarem suavemente */
+.blur-3xl,
+.blur-2xl {
+  animation: pulseGlow 10s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Cartões imersivos com reflexo luminoso no hover */
 .card-immersive {
-  background: linear-gradient(155deg, rgba(11, 40, 104, 0.65) 0%, rgba(8, 27, 70, 0.92) 60%, rgba(6, 17, 46, 0.98) 100%);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    155deg,
+    rgba(11, 40, 104, 0.68) 0%,
+    rgba(8, 27, 70, 0.92) 55%,
+    rgba(6, 17, 46, 0.98) 100%
+  );
   border: 1px solid rgba(234, 242, 255, 0.14);
-  box-shadow: 0 12px 32px -8px rgba(2, 8, 26, 0.65);
+  box-shadow: 0 12px 32px -8px rgba(2, 8, 26, 0.7);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card-immersive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(234, 242, 255, 0.08),
+    transparent
+  );
+  transform: translateX(-140%) skewX(-18deg);
+  pointer-events: none;
+  z-index: 20;
 }
 
 .card-immersive:hover {
-  border-color: rgba(36, 120, 255, 0.55);
-  box-shadow: 0 18px 40px -10px rgba(21, 92, 235, 0.28);
+  border-color: rgba(36, 120, 255, 0.65);
+  box-shadow:
+    0 20px 44px -10px rgba(21, 92, 235, 0.35),
+    0 0 20px rgba(36, 120, 255, 0.15);
+}
+
+.card-immersive:hover::before {
+  animation: subtleSweep 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Respeito pelas preferências de movimento reduzido do utilizador */
+@media (prefers-reduced-motion: reduce) {
+  .bg-mesh-dark,
+  section[class*="bg-gradient-to-"],
+  .blur-3xl,
+  .blur-2xl,
+  .card-immersive::before {
+    animation: none !important;
+  }
 }
