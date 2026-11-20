@@ -1,3 +1,4 @@
+import siteContent from '@/data/siteContent.json';
 import {
   HelpCircle,
   Vote,
@@ -10,65 +11,21 @@ import {
   ExternalLink,
   Info,
   Users,
+  LucideIcon,
 } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
 
-interface VotingStep {
-  number: number;
-  title: string;
-  description: string;
-  icon: LucideIcon;
-}
-
-const VOTING_STEPS: VotingStep[] = [
-  {
-    number: 1,
-    title: '[PLACEHOLDER: Título do Passo 1 — Acesso à Plataforma]',
-    description:
-      '[PLACEHOLDER: Colar aqui a instrução original do Passo 1, sem alterar ou inventar procedimentos.]',
-    icon: Globe,
-  },
-  {
-    number: 2,
-    title: '[PLACEHOLDER: Título do Passo 2 — Autenticação]',
-    description:
-      '[PLACEHOLDER: Colar aqui a instrução original do Passo 2, sem alterar ou inventar procedimentos.]',
-    icon: KeyRound,
-  },
-  {
-    number: 3,
-    title: '[PLACEHOLDER: Título do Passo 3 — Seleção da Eleição]',
-    description:
-      '[PLACEHOLDER: Colar aqui a instrução original do Passo 3, sem alterar ou inventar procedimentos.]',
-    icon: ListChecks,
-  },
-  {
-    number: 4,
-    title: '[PLACEHOLDER: Título do Passo 4 — Escolha da Lista]',
-    description:
-      '[PLACEHOLDER: Colar aqui a instrução original do Passo 4, sem alterar ou inventar procedimentos.]',
-    icon: Vote,
-  },
-  {
-    number: 5,
-    title: '[PLACEHOLDER: Título do Passo 5 — Verificação do Voto]',
-    description:
-      '[PLACEHOLDER: Colar aqui a instrução original do Passo 5, sem alterar ou inventar procedimentos.]',
-    icon: CheckCircle2,
-  },
-  {
-    number: 6,
-    title: '[PLACEHOLDER: Título do Passo 6 — Submissão e Confirmação]',
-    description:
-      '[PLACEHOLDER: Colar aqui a instrução original do Passo 6, sem alterar ou inventar procedimentos.]',
-    icon: Send,
-  },
+const STEP_ICONS: LucideIcon[] = [
+  Globe,
+  KeyRound,
+  ListChecks,
+  Vote,
+  CheckCircle2,
+  Send,
 ];
 
 export default function ComoVotarPage() {
   return (
     <div className="min-h-screen bg-[#06112E]">
-      {/* 1. CABEÇALHO DA PÁGINA */}
       <section className="relative bg-gradient-to-br from-[#06112E] via-[#081B46] to-[#0B2868] text-white py-16 lg:py-24 overflow-hidden border-b border-[#EAF2FF]/12">
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#2478FF]/20 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-[#155CEB]/20 blur-2xl pointer-events-none" />
@@ -89,7 +46,6 @@ export default function ComoVotarPage() {
         </div>
       </section>
 
-      {/* 2. DESTAQUE PARA A IMPORTÂNCIA DA PARTICIPAÇÃO ESTUDANTIL */}
       <section className="py-12 lg:py-16 bg-[#081B46] border-b border-[#EAF2FF]/12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl bg-gradient-to-r from-[#0B2868] to-[#06112E] border border-[#EAF2FF]/18 p-7 sm:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-xl">
@@ -111,7 +67,6 @@ export default function ComoVotarPage() {
         </div>
       </section>
 
-      {/* 3. OS SEIS PASSOS DE VOTAÇÃO */}
       <section className="py-16 lg:py-20 bg-mesh-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
@@ -127,8 +82,8 @@ export default function ComoVotarPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-            {VOTING_STEPS.map((step) => {
-              const Icon = step.icon;
+            {siteContent.votingSteps.map((step, idx) => {
+              const Icon = STEP_ICONS[idx] || CheckCircle2;
               return (
                 <article
                   key={step.number}
@@ -165,7 +120,6 @@ export default function ComoVotarPage() {
         </div>
       </section>
 
-      {/* 4. SECÇÃO DE VOTAÇÃO ONLINE (PLATAFORMA OFICIAL eVotUM) */}
       <section className="pb-20 lg:pb-24 bg-[#06112E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl bg-gradient-to-br from-[#0B2868] via-[#155CEB] to-[#081B46] p-8 sm:p-12 text-white shadow-2xl shadow-black/45 border border-[#EAF2FF]/20 relative overflow-hidden">
@@ -186,7 +140,6 @@ export default function ComoVotarPage() {
                   Acede diretamente ao portal oficial de votação eletrónica da Universidade do Minho para registar o teu voto.
                 </p>
 
-                {/* Nota visual sobre plataforma oficial */}
                 <div className="flex items-start gap-3 bg-[#06112E]/55 border border-[#EAF2FF]/20 rounded-2xl p-4 text-xs sm:text-sm text-[#EAF2FF]">
                   <Info className="w-5 h-5 text-white shrink-0 mt-0.5" />
                   <p className="leading-relaxed">
