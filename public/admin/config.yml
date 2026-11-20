@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: listaaaauminho2027-boop/Fazemos-Acontecer
+  branch: main
+  base_url: https://fazemos-acontecer.vercel.app
+  auth_endpoint: /api/auth
+
+locale: pt
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "conteudo"
+    label: "Gestão do Website"
+    files:
+      - name: "site"
+        label: "Conteúdos Gerais (Início, Equipa, Manifesto, Agenda, Votação)"
+        file: "src/data/siteContent.json"
+        fields:
+          - name: "home"
+            label: "1. Página Inicial"
+            widget: "object"
+            fields:
+              - { name: "heroPhotoUrl", label: "Fotografia Principal de Candidatura", widget: "image", required: false }
+              - { name: "visionParagraph1", label: "A Nossa Visão (Parágrafo 1)", widget: "text" }
+              - { name: "visionParagraph2", label: "A Nossa Visão (Parágrafo 2)", widget: "text", required: false }
+              - { name: "instagramUrl", label: "Link do Instagram Oficial", widget: "string" }
+              - name: "news"
+                label: "Novidades / Comunicados"
+                widget: "list"
+                fields:
+                  - { name: "title", label: "Título", widget: "string" }
+                  - { name: "date", label: "Data", widget: "string" }
+                  - { name: "description", label: "Resumo", widget: "text" }
+                  - { name: "imageUrl", label: "Fotografia", widget: "image", required: false }
+
+          - name: "team"
+            label: "2. Equipa (35 Dirigentes)"
+            widget: "list"
+            summary: "{{fields.department}} — {{fields.role}}: {{fields.name}}"
+            fields:
+              - { name: "id", label: "ID Interno (não alterar)", widget: "string" }
+              - { name: "name", label: "Nome do Estudante", widget: "string" }
+              - { name: "role", label: "Cargo", widget: "string" }
+              - { name: "department", label: "Departamento", widget: "string" }
+              - { name: "imageUrl", label: "Fotografia de Perfil", widget: "image", required: false }
+
+          - name: "manifesto"
+            label: "3. Manifesto"
+            widget: "object"
+            fields:
+              - { name: "intro", label: "Texto Introdutório do Manifesto", widget: "text" }
+              - name: "categories"
+                label: "Departamentos e Propostas"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: "id", label: "ID (não alterar)", widget: "string" }
+                  - { name: "title", label: "Departamento", widget: "string" }
+                  - name: "proposals"
+                    label: "Propostas"
+                    widget: "list"
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { name: "title", label: "Título da Proposta", widget: "string" }
+                      - { name: "description", label: "Texto da Proposta", widget: "text" }
+
+          - name: "agenda"
+            label: "4. Agenda"
+            widget: "list"
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { name: "id", label: "ID (não alterar)", widget: "string" }
+              - { name: "date", label: "Data", widget: "string" }
+              - { name: "time", label: "Hora", widget: "string", required: false }
+              - { name: "title", label: "Título da Iniciativa", widget: "string" }
+              - { name: "location", label: "Local / Campus", widget: "string", required: false }
+              - { name: "description", label: "Descrição", widget: "text", required: false }
+              - { name: "isHighlight", label: "Cartão em Destaque Azul?", widget: "boolean", default: false }
+
+          - name: "votingSteps"
+            label: "5. Como Votar (6 Passos)"
+            widget: "list"
+            summary: "Passo {{fields.number}}: {{fields.title}}"
+            fields:
+              - { name: "number", label: "Número do Passo", widget: "number" }
+              - { name: "title", label: "Título do Passo", widget: "string" }
+              - { name: "description", label: "Instrução", widget: "text" }
