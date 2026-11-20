@@ -9,17 +9,21 @@ locale: pt
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
+editor:
+  preview: false
+
 collections:
   - name: "conteudo"
     label: "Gestão do Website"
     files:
       - name: "site"
-        label: "Conteúdos Gerais (Início, Equipa, Manifesto, Agenda, Votação)"
+        label: "Editar Conteúdos do Website"
         file: "src/data/siteContent.json"
         fields:
           - name: "home"
-            label: "1. Página Inicial"
+            label: "1. Página Inicial (Foto Principal, Visão e Notícias)"
             widget: "object"
+            collapsed: true
             fields:
               - { name: "heroPhotoUrl", label: "Fotografia Principal de Candidatura", widget: "image", required: false }
               - { name: "visionParagraph1", label: "A Nossa Visão (Parágrafo 1)", widget: "text" }
@@ -28,6 +32,7 @@ collections:
               - name: "news"
                 label: "Novidades / Comunicados"
                 widget: "list"
+                summary: "{{fields.title}} ({{fields.date}})"
                 fields:
                   - { name: "title", label: "Título", widget: "string" }
                   - { name: "date", label: "Data", widget: "string" }
@@ -37,6 +42,7 @@ collections:
           - name: "team"
             label: "2. Equipa (35 Dirigentes)"
             widget: "list"
+            collapsed: true
             summary: "{{fields.department}} — {{fields.role}}: {{fields.name}}"
             fields:
               - { name: "id", label: "ID Interno (não alterar)", widget: "string" }
@@ -46,8 +52,9 @@ collections:
               - { name: "imageUrl", label: "Fotografia de Perfil", widget: "image", required: false }
 
           - name: "manifesto"
-            label: "3. Manifesto"
+            label: "3. Manifesto (8 Departamentos)"
             widget: "object"
+            collapsed: true
             fields:
               - { name: "intro", label: "Texto Introdutório do Manifesto", widget: "text" }
               - name: "categories"
@@ -66,8 +73,9 @@ collections:
                       - { name: "description", label: "Texto da Proposta", widget: "text" }
 
           - name: "agenda"
-            label: "4. Agenda"
+            label: "4. Agenda e Eventos"
             widget: "list"
+            collapsed: true
             summary: "{{fields.date}} — {{fields.title}}"
             fields:
               - { name: "id", label: "ID (não alterar)", widget: "string" }
@@ -81,6 +89,7 @@ collections:
           - name: "votingSteps"
             label: "5. Como Votar (6 Passos)"
             widget: "list"
+            collapsed: true
             summary: "Passo {{fields.number}}: {{fields.title}}"
             fields:
               - { name: "number", label: "Número do Passo", widget: "number" }
