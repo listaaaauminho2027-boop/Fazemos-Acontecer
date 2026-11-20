@@ -2,7 +2,7 @@ backend:
   name: github
   repo: listaaaauminho2027-boop/Fazemos-Acontecer
   branch: main
-  base_url: https://fazemos-acontecer.vercel.app
+  base_url: https://lista-a-fazemos-acontecer.vercel.app
   auth_endpoint: /api/auth
 
 locale: pt
