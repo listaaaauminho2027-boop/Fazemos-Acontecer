@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { Users, FileText, ArrowRight, Image as ImageIcon } from 'lucide-react';
+import siteContent from '@/data/siteContent.json';
 
 export default function Hero() {
+  const photoUrl = siteContent.home.heroPhotoUrl;
+
   return (
     <section className="relative bg-gradient-to-br from-[#06112E] via-[#081B46] to-[#0B2868] overflow-hidden pt-14 pb-22 lg:pt-24 lg:pb-32 border-b border-[#EAF2FF]/12">
-      {/* Arcos abstratos fluidos subtis */}
       <svg
         aria-hidden="true"
         className="absolute inset-0 w-full h-full pointer-events-none opacity-35"
@@ -24,7 +26,6 @@ export default function Hero() {
         />
       </svg>
 
-      {/* Logótipo gigante no fundo, cortado nas margens como na referência gráfica */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0"
@@ -41,7 +42,6 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Coluna Esquerda: Título e Botões */}
           <div className="lg:col-span-6 space-y-8">
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#155CEB]/25 text-[#EAF2FF] font-extrabold text-xs uppercase tracking-wider border border-[#2478FF]/40 backdrop-blur-xs">
               <span className="w-2.5 h-2.5 rounded-full bg-[#2478FF] shadow-xs shadow-[#2478FF]" />
@@ -55,7 +55,6 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* Botões de Ação */}
             <div className="flex flex-col sm:flex-row gap-4 pt-1">
               <Link
                 href="/equipa"
@@ -76,24 +75,33 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Coluna Direita: Moldura da Fotografia de Candidatura */}
           <div className="lg:col-span-6">
             <div className="relative w-full rounded-3xl bg-gradient-to-br from-[#2478FF]/25 to-[#081B46]/65 p-3 sm:p-4 border border-[#EAF2FF]/25 shadow-2xl shadow-black/60 backdrop-blur-md">
-              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868]/75 via-[#155CEB]/65 to-[#06112E]/80 flex flex-col items-center justify-center p-8 text-center text-white relative overflow-hidden">
-                <div className="w-16 h-16 rounded-2xl bg-white/12 backdrop-blur-xs flex items-center justify-center mb-4 border border-[#EAF2FF]/25 relative z-10">
-                  <ImageIcon className="w-8 h-8 text-white" />
-                </div>
+              <div className="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0B2868]/75 via-[#155CEB]/65 to-[#06112E]/80 flex flex-col items-center justify-center text-center text-white relative overflow-hidden">
+                {photoUrl ? (
+                  <img
+                    src={photoUrl}
+                    alt="Fotografia de Candidatura Lista A — Fazemos Acontecer"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="p-8 flex flex-col items-center justify-center">
+                    <div className="w-16 h-16 rounded-2xl bg-white/12 backdrop-blur-xs flex items-center justify-center mb-4 border border-[#EAF2FF]/25 relative z-10">
+                      <ImageIcon className="w-8 h-8 text-white" />
+                    </div>
 
-                <span className="px-3.5 py-1 rounded-full bg-white text-[#06112E] text-xs font-extrabold uppercase tracking-wider mb-3 relative z-10 shadow-xs">
-                  Fotografia Principal
-                </span>
+                    <span className="px-3.5 py-1 rounded-full bg-white text-[#06112E] text-xs font-extrabold uppercase tracking-wider mb-3 relative z-10 shadow-xs">
+                      Fotografia Principal
+                    </span>
 
-                <p className="font-extrabold text-lg sm:text-xl max-w-md text-white relative z-10">
-                  [PLACEHOLDER: Fotografia de Candidatura da Lista A — Fazemos Acontecer]
-                </p>
-                <p className="text-xs sm:text-sm text-[#EAF2FF]/85 mt-2 max-w-sm relative z-10">
-                  Espaço preparado para a imagem oficial da candidatura (proporção recomendada 16:11).
-                </p>
+                    <p className="font-extrabold text-lg sm:text-xl max-w-md text-white relative z-10">
+                      [PLACEHOLDER: Fotografia de Candidatura da Lista A — Fazemos Acontecer]
+                    </p>
+                    <p className="text-xs sm:text-sm text-[#EAF2FF]/85 mt-2 max-w-sm relative z-10">
+                      Espaço preparado para a imagem oficial da candidatura (proporção recomendada 16:11).
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
