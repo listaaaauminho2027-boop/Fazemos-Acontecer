@@ -1,0 +1,172 @@
+{
+  "home": {
+    "heroPhotoUrl": "",
+    "visionParagraph1": "[PLACEHOLDER: Texto editável de apresentação da Lista A e da sua visão para a Associação Académica da Universidade do Minho. Substituir pelo texto oficial.]",
+    "visionParagraph2": "[PLACEHOLDER: Segundo parágrafo opcional sobre a proximidade aos estudantes dos campi de Braga e Guimarães.]",
+    "instagramUrl": "https://www.instagram.com/",
+    "news": [
+      {
+        "title": "[PLACEHOLDER: Título da Notícia ou Comunicado #1]",
+        "description": "[PLACEHOLDER: Resumo breve da mensagem, novidade ou anúncio oficial da candidatura Lista A.]",
+        "date": "[DD/MM/2026]",
+        "imageUrl": ""
+      },
+      {
+        "title": "[PLACEHOLDER: Título da Notícia ou Comunicado #2]",
+        "description": "[PLACEHOLDER: Resumo breve da mensagem, novidade ou anúncio oficial da candidatura Lista A.]",
+        "date": "[DD/MM/2026]",
+        "imageUrl": ""
+      },
+      {
+        "title": "[PLACEHOLDER: Título da Notícia ou Comunicado #3]",
+        "description": "[PLACEHOLDER: Resumo breve da mensagem, novidade ou anúncio oficial da candidatura Lista A.]",
+        "date": "[DD/MM/2026]",
+        "imageUrl": ""
+      }
+    ]
+  },
+  "team": [
+    { "id": "pres-1", "name": "Nome a adicionar", "role": "Presidente", "department": "Presidência", "imageUrl": "" },
+    { "id": "pres-2", "name": "Nome a adicionar", "role": "Presidente-Adjunto Interno", "department": "Presidência", "imageUrl": "" },
+    { "id": "pres-3", "name": "Nome a adicionar", "role": "Presidente-Adjunta Externa", "department": "Presidência", "imageUrl": "" },
+    { "id": "pres-4", "name": "Nome a adicionar", "role": "Tesoureiro", "department": "Presidência", "imageUrl": "" },
+    { "id": "pres-5", "name": "Nome a adicionar", "role": "Tesoureiro-Adjunto", "department": "Presidência", "imageUrl": "" },
+    { "id": "pres-6", "name": "Nome a adicionar", "role": "Secretário Direção", "department": "Presidência", "imageUrl": "" },
+    { "id": "ae-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Ação Educativa e Associativismo", "imageUrl": "" },
+    { "id": "ae-2", "name": "Nome a adicionar", "role": "Núcleos", "department": "Ação Educativa e Associativismo", "imageUrl": "" },
+    { "id": "ae-3", "name": "Nome a adicionar", "role": "Internacionalização", "department": "Ação Educativa e Associativismo", "imageUrl": "" },
+    { "id": "ae-4", "name": "Nome a adicionar", "role": "2.º e 3.º ciclos", "department": "Ação Educativa e Associativismo", "imageUrl": "" },
+    { "id": "adm-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Administração", "imageUrl": "" },
+    { "id": "adm-2", "name": "Nome a adicionar", "role": "Logística e Infraestrutura", "department": "Administração", "imageUrl": "" },
+    { "id": "adm-3", "name": "Nome a adicionar", "role": "Operações", "department": "Administração", "imageUrl": "" },
+    { "id": "adm-4", "name": "Nome a adicionar", "role": "Recursos Humanos", "department": "Administração", "imageUrl": "" },
+    { "id": "com-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Comunicação", "imageUrl": "" },
+    { "id": "com-2", "name": "Nome a adicionar", "role": "Diretor", "department": "Comunicação", "imageUrl": "" },
+    { "id": "com-3", "name": "Nome a adicionar", "role": "Diretor", "department": "Comunicação", "imageUrl": "" },
+    { "id": "cult-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Cultural e Tradições Académicas", "imageUrl": "" },
+    { "id": "cult-2", "name": "Nome a adicionar", "role": "Cultura", "department": "Cultural e Tradições Académicas", "imageUrl": "" },
+    { "id": "cult-3", "name": "Nome a adicionar", "role": "Grupos Culturais", "department": "Cultural e Tradições Académicas", "imageUrl": "" },
+    { "id": "cult-4", "name": "Nome a adicionar", "role": "Tradições Académicas", "department": "Cultural e Tradições Académicas", "imageUrl": "" },
+    { "id": "car-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Desenvolvimento de Carreiras", "imageUrl": "" },
+    { "id": "car-2", "name": "Nome a adicionar", "role": "Emprego", "department": "Desenvolvimento de Carreiras", "imageUrl": "" },
+    { "id": "car-3", "name": "Nome a adicionar", "role": "Formação", "department": "Desenvolvimento de Carreiras", "imageUrl": "" },
+    { "id": "desp-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Desportivo", "imageUrl": "" },
+    { "id": "desp-2", "name": "Nome a adicionar", "role": "Diretor", "department": "Desportivo", "imageUrl": "" },
+    { "id": "desp-3", "name": "Nome a adicionar", "role": "Diretor", "department": "Desportivo", "imageUrl": "" },
+    { "id": "desp-4", "name": "Nome a adicionar", "role": "Diretor", "department": "Desportivo", "imageUrl": "" },
+    { "id": "rec-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Recreativo", "imageUrl": "" },
+    { "id": "rec-2", "name": "Nome a adicionar", "role": "Diretor", "department": "Recreativo", "imageUrl": "" },
+    { "id": "rec-3", "name": "Nome a adicionar", "role": "Diretor", "department": "Recreativo", "imageUrl": "" },
+    { "id": "soc-1", "name": "Nome a adicionar", "role": "Vice-Presidente", "department": "Social", "imageUrl": "" },
+    { "id": "soc-2", "name": "Nome a adicionar", "role": "Sociedade", "department": "Social", "imageUrl": "" },
+    { "id": "soc-3", "name": "Nome a adicionar", "role": "Voluntariado", "department": "Social", "imageUrl": "" },
+    { "id": "soc-4", "name": "Nome a adicionar", "role": "Inclusão + Sustentabilidade", "department": "Social", "imageUrl": "" }
+  ],
+  "manifesto": {
+    "intro": "[PLACEHOLDER: Texto introdutório sobre a visão e os compromissos da Lista A — Fazemos Acontecer. Substituir pelo texto original.]",
+    "categories": [
+      {
+        "id": "acao-educativa",
+        "title": "Ação Educativa e Associativismo",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Ação Educativa e Associativismo]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      },
+      {
+        "id": "administracao",
+        "title": "Administração",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Administração]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      },
+      {
+        "id": "comunicacao",
+        "title": "Comunicação",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Comunicação]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      },
+      {
+        "id": "cultural",
+        "title": "Cultural e Tradições Académicas",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Cultural e Tradições Académicas]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      },
+      {
+        "id": "carreiras",
+        "title": "Desenvolvimento de Carreiras",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Desenvolvimento de Carreiras]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      },
+      {
+        "id": "desportivo",
+        "title": "Desportivo",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Desportivo]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      },
+      {
+        "id": "recreativo",
+        "title": "Recreativo",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Recreativo]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      },
+      {
+        "id": "social",
+        "title": "Social",
+        "proposals": [
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Social]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
+        ]
+      }
+    ]
+  },
+  "agenda": [
+    {
+      "id": "evento-2-dez",
+      "date": "2 de dezembro de 2026",
+      "time": "[Hora a confirmar]",
+      "title": "[PLACEHOLDER: Título da Iniciativa — 2 de dezembro]",
+      "description": "[PLACEHOLDER: Colar aqui a descrição oficial do evento de 2 de dezembro de 2026.]",
+      "location": "[Local / Campus a confirmar]",
+      "isHighlight": false
+    },
+    {
+      "id": "evento-3-dez",
+      "date": "3 de dezembro de 2026",
+      "time": "[Hora a confirmar]",
+      "title": "[PLACEHOLDER: Título da Iniciativa — 3 de dezembro]",
+      "description": "[PLACEHOLDER: Colar aqui a descrição oficial do evento de 3 de dezembro de 2026.]",
+      "location": "[Local / Campus a confirmar]",
+      "isHighlight": false
+    },
+    {
+      "id": "evento-4-dez",
+      "date": "4 de dezembro de 2026",
+      "time": "[Hora a confirmar]",
+      "title": "[PLACEHOLDER: Título da Iniciativa — 4 de dezembro]",
+      "description": "[PLACEHOLDER: Colar aqui a descrição oficial do evento de 4 de dezembro de 2026.]",
+      "location": "[Local / Campus a confirmar]",
+      "isHighlight": false
+    },
+    {
+      "id": "evento-9-dez-eleicoes",
+      "date": "9 de dezembro de 2026",
+      "time": "00:00 — 23:59",
+      "title": "Dia das Eleições — AAUMinho",
+      "description": "Ato eleitoral para os órgãos da Associação Académica da Universidade do Minho. Participa e vota Lista A — Fazemos Acontecer.",
+      "location": "Universidade do Minho",
+      "isHighlight": true
+    }
+  ],
+  "votingSteps": [
+    { "number": 1, "title": "[PLACEHOLDER: Título do Passo 1 — Acesso à Plataforma]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 1.]" },
+    { "number": 2, "title": "[PLACEHOLDER: Título do Passo 2 — Autenticação]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 2.]" },
+    { "number": 3, "title": "[PLACEHOLDER: Título do Passo 3 — Seleção da Eleição]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 3.]" },
+    { "number": 4, "title": "[PLACEHOLDER: Título do Passo 4 — Escolha da Lista]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 4.]" },
+    { "number": 5, "title": "[PLACEHOLDER: Título do Passo 5 — Verificação do Voto]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 5.]" },
+    { "number": 6, "title": "[PLACEHOLDER: Título do Passo 6 — Submissão e Confirmação]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 6.]" }
+  ]
+}
