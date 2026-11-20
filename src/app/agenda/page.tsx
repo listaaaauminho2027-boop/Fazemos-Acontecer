@@ -1,59 +1,10 @@
-import TimelineItem, { TimelineEventProps } from '@/components/TimelineItem';
+import TimelineItem from '@/components/TimelineItem';
+import siteContent from '@/data/siteContent.json';
 import { CalendarDays, Sparkles, Vote } from 'lucide-react';
-
-const AGENDA_EVENTS: TimelineEventProps[] = [
-  {
-    id: 'evento-2-dez',
-    date: '2 de dezembro de 2026',
-    time: '[Hora a confirmar]',
-    title: '[PLACEHOLDER: Título da Iniciativa — 2 de dezembro]',
-    description:
-      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 2 de dezembro de 2026.]',
-    location: '[Local / Campus a confirmar]',
-  },
-  {
-    id: 'evento-3-dez',
-    date: '3 de dezembro de 2026',
-    time: '[Hora a confirmar]',
-    title: '[PLACEHOLDER: Título da Iniciativa — 3 de dezembro]',
-    description:
-      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 3 de dezembro de 2026.]',
-    location: '[Local / Campus a confirmar]',
-  },
-  {
-    id: 'evento-4-dez',
-    date: '4 de dezembro de 2026',
-    time: '[Hora a confirmar]',
-    title: '[PLACEHOLDER: Título da Iniciativa — 4 de dezembro]',
-    description:
-      '[PLACEHOLDER: Colar aqui a descrição oficial do evento de 4 de dezembro de 2026.]',
-    location: '[Local / Campus a confirmar]',
-  },
-  {
-    id: 'evento-outros',
-    date: '[Data a adicionar]',
-    time: '[Hora a confirmar]',
-    title: '[PLACEHOLDER: Outros elementos da agenda original]',
-    description:
-      '[PLACEHOLDER: Espaço reservado para os restantes momentos e iniciativas definidos na agenda original.]',
-    location: '[Local / Campus a confirmar]',
-  },
-  {
-    id: 'evento-9-dez-eleicoes',
-    date: '9 de dezembro de 2026',
-    time: '00:00 — 23:59',
-    title: 'Dia das Eleições — AAUMinho',
-    description:
-      'Ato eleitoral para os órgãos da Associação Académica da Universidade do Minho. Participa e vota Lista A — Fazemos Acontecer.',
-    location: 'Universidade do Minho',
-    isHighlight: true,
-  },
-];
 
 export default function AgendaPage() {
   return (
     <div className="min-h-screen bg-[#06112E]">
-      {/* 1. CABEÇALHO DA PÁGINA */}
       <section className="relative bg-gradient-to-br from-[#06112E] via-[#081B46] to-[#0B2868] text-white py-16 lg:py-24 overflow-hidden border-b border-[#EAF2FF]/12">
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#2478FF]/20 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-[#155CEB]/20 blur-2xl pointer-events-none" />
@@ -74,7 +25,6 @@ export default function AgendaPage() {
         </div>
       </section>
 
-      {/* 2. BANNER VISUAL DE DESTAQUE PARA AS ELEIÇÕES (9 DE DEZEMBRO DE 2026) */}
       <section className="bg-gradient-to-r from-[#081B46] via-[#0B2868] to-[#155CEB] text-white py-12 sm:py-14 relative overflow-hidden border-b border-[#EAF2FF]/15">
         <div className="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-[#2478FF]/30 blur-2xl pointer-events-none" />
 
@@ -110,7 +60,6 @@ export default function AgendaPage() {
         </div>
       </section>
 
-      {/* 3. CRONOLOGIA DE EVENTOS */}
       <section className="py-16 lg:py-20 bg-mesh-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
@@ -123,7 +72,7 @@ export default function AgendaPage() {
           </div>
 
           <div>
-            {AGENDA_EVENTS.map((event) => (
+            {siteContent.agenda.map((event) => (
               <TimelineItem
                 key={event.id}
                 id={event.id}
