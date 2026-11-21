@@ -1,14 +1,15 @@
 import { User } from 'lucide-react';
 
 interface TeamCardProps {
-  name: string;
+  name?: string;
   role: string;
   department: string;
   imageUrl?: string;
+  isLeader?: boolean;
 }
 
 export default function TeamCard({
-  name,
+  name = 'Nome a adicionar',
   role,
   department,
   imageUrl,
