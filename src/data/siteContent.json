@@ -28,45 +28,45 @@
   "team": [
     {
       "id": "pres-1",
-      "name": "Nome a adicionar",
+      "name": "Sofia Ribas",
       "role": "Presidente",
       "department": "Presidência",
-      "imageUrl": ""
+      "imageUrl": "/images/uploads/1.-presidente-sofia-ribas.jpg"
     },
     {
       "id": "pres-2",
       "name": "Nome a adicionar",
       "role": "Presidente-Adjunta Interna",
       "department": "Presidência",
-      "imageUrl": "/images/uploads/15.jpg"
+      "imageUrl": "/images/uploads/2.-presidente-adjunto-interno-bruna-nascimento-lima.jpg"
     },
     {
       "id": "pres-3",
-      "name": "Nome a adicionar",
-      "role": "Presidente-Adjunta Externa",
+      "name": "Guilherme Fernandes",
+      "role": "Presidente-Adjunto Externo",
       "department": "Presidência",
-      "imageUrl": ""
+      "imageUrl": "/images/uploads/3.-presidente-adjunto-externo-guilherme-fernandes.jpg"
     },
     {
       "id": "pres-4",
-      "name": "Nome a adicionar",
-      "role": "Tesoureiro",
+      "name": "Lara Pereira",
+      "role": "Tesoureira",
       "department": "Presidência",
-      "imageUrl": ""
+      "imageUrl": "/images/uploads/4.-tesoureira-lara-pereira.jpg"
     },
     {
       "id": "pres-5",
-      "name": "Nome a adicionar",
-      "role": "Tesoureiro-Adjunto",
+      "name": "Inês Fernandes",
+      "role": "Tesoureira-Adjunta",
       "department": "Presidência",
-      "imageUrl": ""
+      "imageUrl": "/images/uploads/5.-tesoureira-adjunta-inês-fernandes.jpg"
     },
     {
       "id": "pres-6",
-      "name": "Nome a adicionar",
+      "name": "Vasco Vaz",
       "role": "Secretário Direção",
       "department": "Presidência",
-      "imageUrl": ""
+      "imageUrl": "/images/uploads/6.-secretário-vasco-vaz.jpg"
     },
     {
       "id": "ae-1",
