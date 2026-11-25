@@ -1,6 +1,6 @@
 {
   "home": {
-    "heroPhotoUrl": "/images/uploads/dsc04455.jpg",
+    "heroPhotoUrl": "",
     "visionParagraph1": "[PLACEHOLDER: Texto editável de apresentação da Lista A e da sua visão para a Associação Académica da Universidade do Minho. Substituir pelo texto oficial.]",
     "visionParagraph2": "[PLACEHOLDER: Segundo parágrafo opcional sobre a proximidade aos estudantes dos campi de Braga e Guimarães.]",
     "instagramUrl": "https://www.instagram.com/",
@@ -26,251 +26,41 @@
     ]
   },
   "team": [
-    {
-      "id": "pres-1",
-      "name": "Sofia Ribas",
-      "role": "Presidente",
-      "department": "Presidência",
-      "imageUrl": "/images/uploads/1.-presidente-sofia-ribas.jpg"
-    },
-    {
-      "id": "pres-2",
-      "name": "Nome a adicionar",
-      "role": "Presidente-Adjunta Interna",
-      "department": "Presidência",
-      "imageUrl": "/images/uploads/2.-presidente-adjunto-interno-bruna-nascimento-lima.jpg"
-    },
-    {
-      "id": "pres-3",
-      "name": "Guilherme Fernandes",
-      "role": "Presidente-Adjunto Externo",
-      "department": "Presidência",
-      "imageUrl": "/images/uploads/3.-presidente-adjunto-externo-guilherme-fernandes.jpg"
-    },
-    {
-      "id": "pres-4",
-      "name": "Lara Pereira",
-      "role": "Tesoureira",
-      "department": "Presidência",
-      "imageUrl": "/images/uploads/4.-tesoureira-lara-pereira.jpg"
-    },
-    {
-      "id": "pres-5",
-      "name": "Inês Fernandes",
-      "role": "Tesoureira-Adjunta",
-      "department": "Presidência",
-      "imageUrl": "/images/uploads/5.-tesoureira-adjunta-inês-fernandes.jpg"
-    },
-    {
-      "id": "pres-6",
-      "name": "Vasco Vaz",
-      "role": "Secretário Direção",
-      "department": "Presidência",
-      "imageUrl": "/images/uploads/6.-secretário-vasco-vaz.jpg"
-    },
-    {
-      "id": "ae-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Ação Educativa e Associativismo",
-      "imageUrl": ""
-    },
-    {
-      "id": "ae-2",
-      "name": "Nome a adicionar",
-      "role": "Núcleos",
-      "department": "Ação Educativa e Associativismo",
-      "imageUrl": ""
-    },
-    {
-      "id": "ae-3",
-      "name": "Nome a adicionar",
-      "role": "Internacionalização",
-      "department": "Ação Educativa e Associativismo",
-      "imageUrl": ""
-    },
-    {
-      "id": "ae-4",
-      "name": "Nome a adicionar",
-      "role": "2.º e 3.º ciclos",
-      "department": "Ação Educativa e Associativismo",
-      "imageUrl": ""
-    },
-    {
-      "id": "adm-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Administração",
-      "imageUrl": ""
-    },
-    {
-      "id": "adm-2",
-      "name": "Nome a adicionar",
-      "role": "Logística e Infraestrutura",
-      "department": "Administração",
-      "imageUrl": ""
-    },
-    {
-      "id": "adm-3",
-      "name": "Nome a adicionar",
-      "role": "Operações",
-      "department": "Administração",
-      "imageUrl": ""
-    },
-    {
-      "id": "adm-4",
-      "name": "Nome a adicionar",
-      "role": "Recursos Humanos",
-      "department": "Administração",
-      "imageUrl": ""
-    },
-    {
-      "id": "com-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Comunicação",
-      "imageUrl": ""
-    },
-    {
-      "id": "com-2",
-      "name": "Nome a adicionar",
-      "role": "Diretor",
-      "department": "Comunicação",
-      "imageUrl": ""
-    },
-    {
-      "id": "com-3",
-      "name": "Nome a adicionar",
-      "role": "Diretor",
-      "department": "Comunicação",
-      "imageUrl": ""
-    },
-    {
-      "id": "cult-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Cultural e Tradições Académicas",
-      "imageUrl": ""
-    },
-    {
-      "id": "cult-2",
-      "name": "Nome a adicionar",
-      "role": "Cultura",
-      "department": "Cultural e Tradições Académicas",
-      "imageUrl": ""
-    },
-    {
-      "id": "cult-3",
-      "name": "Nome a adicionar",
-      "role": "Grupos Culturais",
-      "department": "Cultural e Tradições Académicas",
-      "imageUrl": ""
-    },
-    {
-      "id": "cult-4",
-      "name": "Nome a adicionar",
-      "role": "Tradições Académicas",
-      "department": "Cultural e Tradições Académicas",
-      "imageUrl": ""
-    },
-    {
-      "id": "car-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Desenvolvimento de Carreiras",
-      "imageUrl": ""
-    },
-    {
-      "id": "car-2",
-      "name": "Nome a adicionar",
-      "role": "Emprego",
-      "department": "Desenvolvimento de Carreiras",
-      "imageUrl": ""
-    },
-    {
-      "id": "car-3",
-      "name": "Nome a adicionar",
-      "role": "Formação",
-      "department": "Desenvolvimento de Carreiras",
-      "imageUrl": ""
-    },
-    {
-      "id": "desp-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Desportivo",
-      "imageUrl": ""
-    },
-    {
-      "id": "desp-2",
-      "name": "Nome a adicionar",
-      "role": "Diretor",
-      "department": "Desportivo",
-      "imageUrl": ""
-    },
-    {
-      "id": "desp-3",
-      "name": "Nome a adicionar",
-      "role": "Diretor",
-      "department": "Desportivo",
-      "imageUrl": ""
-    },
-    {
-      "id": "desp-4",
-      "name": "Nome a adicionar",
-      "role": "Diretor",
-      "department": "Desportivo",
-      "imageUrl": ""
-    },
-    {
-      "id": "rec-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Recreativo",
-      "imageUrl": ""
-    },
-    {
-      "id": "rec-2",
-      "name": "Nome a adicionar",
-      "role": "Diretor",
-      "department": "Recreativo",
-      "imageUrl": ""
-    },
-    {
-      "id": "rec-3",
-      "name": "Nome a adicionar",
-      "role": "Diretor",
-      "department": "Recreativo",
-      "imageUrl": ""
-    },
-    {
-      "id": "soc-1",
-      "name": "Nome a adicionar",
-      "role": "Vice-Presidente",
-      "department": "Social",
-      "imageUrl": ""
-    },
-    {
-      "id": "soc-2",
-      "name": "Nome a adicionar",
-      "role": "Sociedade",
-      "department": "Social",
-      "imageUrl": ""
-    },
-    {
-      "id": "soc-3",
-      "name": "Nome a adicionar",
-      "role": "Voluntariado",
-      "department": "Social",
-      "imageUrl": ""
-    },
-    {
-      "id": "soc-4",
-      "name": "Nome a adicionar",
-      "role": "Inclusão + Sustentabilidade",
-      "department": "Social",
-      "imageUrl": ""
-    }
+    { "id": "pres-1", "name": "Sofia Ribas", "role": "Presidente", "department": "Presidência", "imageUrl": "/images/equipa/Presidência/1. Presidente Sofia Ribas.jpg" },
+    { "id": "pres-2", "name": "Bruna Nascimento Lima", "role": "Presidente-Adjunta Interna", "department": "Presidência", "imageUrl": "/images/equipa/Presidência/2. Presidente-Adjunto Interno Bruna Nascimento Lima.jpg" },
+    { "id": "pres-3", "name": "Guilherme Fernandes", "role": "Presidente-Adjunto Externo", "department": "Presidência", "imageUrl": "/images/equipa/Presidência/3. Presidente-Adjunto Externo Guilherme Fernandes.jpg" },
+    { "id": "pres-4", "name": "Lara Pereira", "role": "Tesoureira", "department": "Presidência", "imageUrl": "/images/equipa/Presidência/4. Tesoureira Lara Pereira.jpg" },
+    { "id": "pres-5", "name": "Inês Fernandes", "role": "Tesoureira-Adjunta", "department": "Presidência", "imageUrl": "/images/equipa/Presidência/5. Tesoureira Adjunta Inês Fernandes.jpg" },
+    { "id": "pres-6", "name": "Vasco Vaz", "role": "Secretário Direção", "department": "Presidência", "imageUrl": "/images/equipa/Presidência/6. Secretário Vasco Vaz.jpg" },
+    { "id": "ae-1", "name": "Francisco Coelho", "role": "Vice-Presidente", "department": "Ação Educativa e Associativismo", "imageUrl": "/images/equipa/AEA/7. Vice-Presidente AEA - Francisco Coelho.jpg" },
+    { "id": "ae-2", "name": "Afonso Sousa", "role": "Núcleos", "department": "Ação Educativa e Associativismo", "imageUrl": "/images/equipa/AEA/8. Diretor Apoio a Núcleos - Afonso Sousa.jpg" },
+    { "id": "ae-3", "name": "Ariana Almeida", "role": "Internacionalização", "department": "Ação Educativa e Associativismo", "imageUrl": "/images/equipa/AEA/10. Diretora Internacionalização - Ariana Almeida.jpg" },
+    { "id": "ae-4", "name": "Filipa Antunes", "role": "2.º e 3.º ciclos", "department": "Ação Educativa e Associativismo", "imageUrl": "/images/equipa/AEA/9. Diretora 2º e 3º ciclos - Filipa Antunes.jpg" },
+    { "id": "adm-1", "name": "Bernardo Lobo", "role": "Vice-Presidente", "department": "Administração", "imageUrl": "/images/equipa/Administração/11. Vice-Presidente Administração -Bernardo Lobo.jpg" },
+    { "id": "adm-2", "name": "Isabel Sousa", "role": "Logística e Infraestrutura", "department": "Administração", "imageUrl": "/images/equipa/Administração/12. Diretora Logística - Isabel Sousa.jpg" },
+    { "id": "adm-3", "name": "Manuel Corais", "role": "Operações", "department": "Administração", "imageUrl": "/images/equipa/Administração/14. Diretor de Operações - Manuel Corais.jpg" },
+    { "id": "adm-4", "name": "Dinis Costa", "role": "Recursos Humanos", "department": "Administração", "imageUrl": "/images/equipa/Administração/13. Diretor Recursos Humanos - Dinis Costa.jpg" },
+    { "id": "com-1", "name": "Daniela Rodrigues", "role": "Vice-Presidente", "department": "Comunicação", "imageUrl": "/images/equipa/Comunicação/15. Vice-Presidente Comunicação -Daniela Rodrigues.jpg" },
+    { "id": "com-2", "name": "Micaela Martínez", "role": "Diretora", "department": "Comunicação", "imageUrl": "/images/equipa/Comunicação/16. Diretora Comunicação - Micaela Martínez.jpg" },
+    { "id": "com-3", "name": "Tiago Almeida", "role": "Diretor", "department": "Comunicação", "imageUrl": "/images/equipa/Comunicação/17. Diretor Comunicação - Tiago Almeida.jpg" },
+    { "id": "cult-1", "name": "João Nunes", "role": "Vice-Presidente", "department": "Cultural e Tradições Académicas", "imageUrl": "/images/equipa/Cultural/18. Vice-Presidente Cultural e Tradições Académicas - João Nunes.jpg" },
+    { "id": "cult-2", "name": "Alexandre David Pereira Fernandes", "role": "Cultura", "department": "Cultural e Tradições Académicas", "imageUrl": "/images/equipa/Cultural/19. Diretor Cultura Alexandre David Pereira Fernandes.jpg" },
+    { "id": "cult-3", "name": "Nome a adicionar", "role": "Grupos Culturais", "department": "Cultural e Tradições Académicas", "imageUrl": "" },
+    { "id": "cult-4", "name": "Cátia Filipa Pinto Simões", "role": "Tradições Académicas", "department": "Cultural e Tradições Académicas", "imageUrl": "/images/equipa/Cultural/20. Diretora Tradições Académicas Cátia Filipa Pinto Simões.jpg" },
+    { "id": "car-1", "name": "Inês Costa", "role": "Vice-Presidente", "department": "Desenvolvimento de Carreiras", "imageUrl": "/images/equipa/Carreiras/22. Vice-Presidente Desenvolvimento de Carreiras - Inês Costa.jpg" },
+    { "id": "car-2", "name": "Filipe Antunes Carvalho", "role": "Emprego", "department": "Desenvolvimento de Carreiras", "imageUrl": "/images/equipa/Carreiras/23. Diretor de Emprego e Empreendedorismo - Filipe Antunes Carvalho.jpg" },
+    { "id": "car-3", "name": "Nome a adicionar", "role": "Formação", "department": "Desenvolvimento de Carreiras", "imageUrl": "" },
+    { "id": "desp-1", "name": "Carolina Silva", "role": "Vice-Presidente", "department": "Desportivo", "imageUrl": "/images/equipa/Desportivo/25. Vice-Presidente Desportivo - Carolina Silva.jpg" },
+    { "id": "desp-2", "name": "Carolina Lança", "role": "Diretora", "department": "Desportivo", "imageUrl": "/images/equipa/Desportivo/26. Diretora do Desportivo - Carolina Lança.jpg" },
+    { "id": "desp-3", "name": "Isabel Sarmento", "role": "Diretora", "department": "Desportivo", "imageUrl": "/images/equipa/Desportivo/27. Diretora do Desportivo - Isabel Sarmento.jpg" },
+    { "id": "desp-4", "name": "Afonso Braga", "role": "Diretor", "department": "Desportivo", "imageUrl": "/images/equipa/Desportivo/28. Diretor do Desportivo - Afonso Braga.jpg" },
+    { "id": "rec-1", "name": "Tiago Costa", "role": "Vice-Presidente", "department": "Recreativo", "imageUrl": "/images/equipa/Recreativo/29. Vice-Presidente Recreativo - Tiago Costa.jpg" },
+    { "id": "rec-2", "name": "João Alves", "role": "Diretor", "department": "Recreativo", "imageUrl": "/images/equipa/Recreativo/30. Diretor do Recreativo - João Alves.jpg" },
+    { "id": "rec-3", "name": "Nome a adicionar", "role": "Diretor", "department": "Recreativo", "imageUrl": "" },
+    { "id": "soc-1", "name": "Carolina França", "role": "Vice-Presidente", "department": "Social", "imageUrl": "/images/equipa/Social/32. Vice-Presidente Social - Carolina França.jpg" },
+    { "id": "soc-2", "name": "Miguel Machado", "role": "Sociedade", "department": "Social", "imageUrl": "/images/equipa/Social/34. Diretor Sociedade - Miguel Machado.jpg" },
+    { "id": "soc-3", "name": "Bruna Ramos", "role": "Voluntariado", "department": "Social", "imageUrl": "/images/equipa/Social/35. Diretora Voluntariado Bruna Ramos.jpg" },
+    { "id": "soc-4", "name": "Maria Pereira", "role": "Inclusão + Sustentabilidade", "department": "Social", "imageUrl": "/images/equipa/Social/33. Diretora de Inclusão e Sustentabilidade - Maria Pereira.jpg" }
   ],
   "manifesto": {
     "intro": "[PLACEHOLDER: Texto introdutório sobre a visão e os compromissos da Lista A — Fazemos Acontecer. Substituir pelo texto original.]",
@@ -279,80 +69,56 @@
         "id": "acao-educativa",
         "title": "Ação Educativa e Associativismo",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Ação Educativa e Associativismo]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Ação Educativa e Associativismo]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       },
       {
         "id": "administracao",
         "title": "Administração",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Administração]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Administração]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       },
       {
         "id": "comunicacao",
         "title": "Comunicação",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Comunicação]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Comunicação]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       },
       {
         "id": "cultural",
         "title": "Cultural e Tradições Académicas",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Cultural e Tradições Académicas]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Cultural e Tradições Académicas]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       },
       {
         "id": "carreiras",
         "title": "Desenvolvimento de Carreiras",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Desenvolvimento de Carreiras]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Desenvolvimento de Carreiras]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       },
       {
         "id": "desportivo",
         "title": "Desportivo",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Desportivo]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Desportivo]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       },
       {
         "id": "recreativo",
         "title": "Recreativo",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Recreativo]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Recreativo]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       },
       {
         "id": "social",
         "title": "Social",
         "proposals": [
-          {
-            "title": "[PLACEHOLDER: Título da Proposta 1 — Social]",
-            "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]"
-          }
+          { "title": "[PLACEHOLDER: Título da Proposta 1 — Social]", "description": "[PLACEHOLDER: Colar aqui o texto integral da proposta original.]" }
         ]
       }
     ]
@@ -396,35 +162,11 @@
     }
   ],
   "votingSteps": [
-    {
-      "number": 1,
-      "title": "[PLACEHOLDER: Título do Passo 1 — Acesso à Plataforma]",
-      "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 1.]"
-    },
-    {
-      "number": 2,
-      "title": "[PLACEHOLDER: Título do Passo 2 — Autenticação]",
-      "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 2.]"
-    },
-    {
-      "number": 3,
-      "title": "[PLACEHOLDER: Título do Passo 3 — Seleção da Eleição]",
-      "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 3.]"
-    },
-    {
-      "number": 4,
-      "title": "[PLACEHOLDER: Título do Passo 4 — Escolha da Lista]",
-      "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 4.]"
-    },
-    {
-      "number": 5,
-      "title": "[PLACEHOLDER: Título do Passo 5 — Verificação do Voto]",
-      "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 5.]"
-    },
-    {
-      "number": 6,
-      "title": "[PLACEHOLDER: Título do Passo 6 — Submissão e Confirmação]",
-      "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 6.]"
-    }
+    { "number": 1, "title": "[PLACEHOLDER: Título do Passo 1 — Acesso à Plataforma]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 1.]" },
+    { "number": 2, "title": "[PLACEHOLDER: Título do Passo 2 — Autenticação]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 2.]" },
+    { "number": 3, "title": "[PLACEHOLDER: Título do Passo 3 — Seleção da Eleição]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 3.]" },
+    { "number": 4, "title": "[PLACEHOLDER: Título do Passo 4 — Escolha da Lista]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 4.]" },
+    { "number": 5, "title": "[PLACEHOLDER: Título do Passo 5 — Verificação do Voto]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 5.]" },
+    { "number": 6, "title": "[PLACEHOLDER: Título do Passo 6 — Submissão e Confirmação]", "description": "[PLACEHOLDER: Colar aqui a instrução original do Passo 6.]" }
   ]
 }
