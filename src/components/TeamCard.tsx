@@ -14,15 +14,16 @@ export default function TeamCard({
   department,
   imageUrl,
 }: TeamCardProps) {
-  const encodedImageUrl = imageUrl ? encodeURI(imageUrl) : undefined;
+  // Converte os acentos do JSON para o formato exato dos ficheiros enviados pelo macOS
+  const normalizedImageUrl = imageUrl ? encodeURI(imageUrl.normalize('NFD')) : undefined;
 
   return (
     <article className="card-immersive rounded-3xl overflow-hidden flex flex-col justify-between group hover:-translate-y-1.5">
       {/* Zona da Fotografia em formato quadrado 1:1 */}
       <div className="relative w-full aspect-square bg-gradient-to-b from-[#0B2868] to-[#06112E] overflow-hidden">
-        {encodedImageUrl ? (
+        {normalizedImageUrl ? (
           <img
-            src={encodedImageUrl}
+            src={normalizedImageUrl}
             alt={`${name} — ${role}`}
             className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
