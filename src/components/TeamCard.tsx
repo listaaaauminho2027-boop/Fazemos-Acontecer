@@ -16,8 +16,8 @@ export default function TeamCard({
 }: TeamCardProps) {
   return (
     <article className="card-immersive rounded-3xl overflow-hidden flex flex-col justify-between group hover:-translate-y-1.5">
-      {/* Zona da Fotografia — preenche 100% da largura sem barras laterais */}
-      <div className="relative w-full aspect-[4/5] bg-gradient-to-b from-[#0B2868] to-[#06112E] overflow-hidden">
+      {/* Zona da Fotografia em formato quadrado 1:1 */}
+      <div className="relative w-full aspect-square bg-gradient-to-b from-[#0B2868] to-[#06112E] overflow-hidden">
         {imageUrl ? (
           <img
             src={imageUrl}
